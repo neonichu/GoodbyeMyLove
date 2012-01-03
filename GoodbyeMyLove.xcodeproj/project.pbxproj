@@ -1,0 +1,266 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A2AF8BD14B2F65E00AD9089 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2AF8BC14B2F65E00AD9089 /* UIKit.framework */; };
+		8A2AF8BF14B2F65E00AD9089 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2AF8BE14B2F65E00AD9089 /* Foundation.framework */; };
+		8A2AF8C114B2F65E00AD9089 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2AF8C014B2F65E00AD9089 /* CoreGraphics.framework */; };
+		8A2AF8C714B2F65E00AD9089 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AF8C514B2F65E00AD9089 /* InfoPlist.strings */; };
+		8A2AF8C914B2F65E00AD9089 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2AF8C814B2F65E00AD9089 /* main.m */; };
+		8A2AF8CD14B2F65E00AD9089 /* VUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2AF8CC14B2F65E00AD9089 /* VUAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8A2AF8B814B2F65E00AD9089 /* GoodbyeMyLove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodbyeMyLove.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A2AF8BC14B2F65E00AD9089 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8A2AF8BE14B2F65E00AD9089 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8A2AF8C014B2F65E00AD9089 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8A2AF8C414B2F65E00AD9089 /* GoodbyeMyLove-Info.plist */ = {isa = PBXFileReference; path = "GoodbyeMyLove-Info.plist"; sourceTree = "<group>"; };
+		8A2AF8C614B2F65E00AD9089 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A2AF8C814B2F65E00AD9089 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8A2AF8CA14B2F65E00AD9089 /* GoodbyeMyLove-Prefix.pch */ = {isa = PBXFileReference; path = "GoodbyeMyLove-Prefix.pch"; sourceTree = "<group>"; };
+		8A2AF8CB14B2F65E00AD9089 /* VUAppDelegate.h */ = {isa = PBXFileReference; path = VUAppDelegate.h; sourceTree = "<group>"; };
+		8A2AF8CC14B2F65E00AD9089 /* VUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A2AF8B514B2F65E00AD9089 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A2AF8BD14B2F65E00AD9089 /* UIKit.framework in Frameworks */,
+				8A2AF8BF14B2F65E00AD9089 /* Foundation.framework in Frameworks */,
+				8A2AF8C114B2F65E00AD9089 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A2AF8AD14B2F65D00AD9089 = {
+			isa = PBXGroup;
+			children = (
+				8A2AF8C214B2F65E00AD9089 /* GoodbyeMyLove */,
+				8A2AF8BB14B2F65E00AD9089 /* Frameworks */,
+				8A2AF8B914B2F65E00AD9089 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A2AF8B914B2F65E00AD9089 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A2AF8B814B2F65E00AD9089 /* GoodbyeMyLove.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A2AF8BB14B2F65E00AD9089 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A2AF8BC14B2F65E00AD9089 /* UIKit.framework */,
+				8A2AF8BE14B2F65E00AD9089 /* Foundation.framework */,
+				8A2AF8C014B2F65E00AD9089 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A2AF8C214B2F65E00AD9089 /* GoodbyeMyLove */ = {
+			isa = PBXGroup;
+			children = (
+				8A2AF8CB14B2F65E00AD9089 /* VUAppDelegate.h */,
+				8A2AF8CC14B2F65E00AD9089 /* VUAppDelegate.m */,
+				8A2AF8C314B2F65E00AD9089 /* Supporting Files */,
+			);
+			path = GoodbyeMyLove;
+			sourceTree = "<group>";
+		};
+		8A2AF8C314B2F65E00AD9089 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A2AF8C414B2F65E00AD9089 /* GoodbyeMyLove-Info.plist */,
+				8A2AF8C514B2F65E00AD9089 /* InfoPlist.strings */,
+				8A2AF8C814B2F65E00AD9089 /* main.m */,
+				8A2AF8CA14B2F65E00AD9089 /* GoodbyeMyLove-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A2AF8B714B2F65E00AD9089 /* GoodbyeMyLove */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A2AF8D014B2F65E00AD9089 /* Build configuration list for PBXNativeTarget "GoodbyeMyLove" */;
+			buildPhases = (
+				8A2AF8B414B2F65E00AD9089 /* Sources */,
+				8A2AF8B514B2F65E00AD9089 /* Frameworks */,
+				8A2AF8B614B2F65E00AD9089 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoodbyeMyLove;
+			productName = GoodbyeMyLove;
+			productReference = 8A2AF8B814B2F65E00AD9089 /* GoodbyeMyLove.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A2AF8AF14B2F65D00AD9089 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Extessy AG";
+			};
+			buildConfigurationList = 8A2AF8B214B2F65D00AD9089 /* Build configuration list for PBXProject "GoodbyeMyLove" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8A2AF8AD14B2F65D00AD9089;
+			productRefGroup = 8A2AF8B914B2F65E00AD9089 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A2AF8B714B2F65E00AD9089 /* GoodbyeMyLove */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A2AF8B614B2F65E00AD9089 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A2AF8C714B2F65E00AD9089 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A2AF8B414B2F65E00AD9089 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A2AF8C914B2F65E00AD9089 /* main.m in Sources */,
+				8A2AF8CD14B2F65E00AD9089 /* VUAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8A2AF8C514B2F65E00AD9089 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A2AF8C614B2F65E00AD9089 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A2AF8CE14B2F65E00AD9089 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A2AF8CF14B2F65E00AD9089 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A2AF8D114B2F65E00AD9089 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GoodbyeMyLove/GoodbyeMyLove-Prefix.pch";
+				INFOPLIST_FILE = "GoodbyeMyLove/GoodbyeMyLove-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8A2AF8D214B2F65E00AD9089 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GoodbyeMyLove/GoodbyeMyLove-Prefix.pch";
+				INFOPLIST_FILE = "GoodbyeMyLove/GoodbyeMyLove-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A2AF8B214B2F65D00AD9089 /* Build configuration list for PBXProject "GoodbyeMyLove" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A2AF8CE14B2F65E00AD9089 /* Debug */,
+				8A2AF8CF14B2F65E00AD9089 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A2AF8D014B2F65E00AD9089 /* Build configuration list for PBXNativeTarget "GoodbyeMyLove" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A2AF8D114B2F65E00AD9089 /* Debug */,
+				8A2AF8D214B2F65E00AD9089 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A2AF8AF14B2F65D00AD9089 /* Project object */;
+}
