@@ -1,5 +1,5 @@
 //
-//  VUAppDelegate.h
+//  RootViewController.h
 //  GoodbyeMyLove
 //
 //  Created by Boris Bügling on 03.01.12.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VUAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface RootViewController : UIViewController
 
 @end
