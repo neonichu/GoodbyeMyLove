@@ -7,6 +7,7 @@
 //
 
 #import "cocos2d.h"
+#import "SimpleAudioEngine.h"
 
 #import "GMLMenuLayer.h"
 #import "RootViewController.h"
@@ -50,6 +51,8 @@
 	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
     
 	[[CCDirector sharedDirector] runWithScene: [GMLMenuLayer scene]];
+    
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"443238_Sorry.MP3"];
 }
 
 -(void)applicationWillResignActive:(UIApplication*)application 
