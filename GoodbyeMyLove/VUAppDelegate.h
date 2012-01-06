@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VUAppDelegate : UIResponder <UIApplicationDelegate>
+#import "VUAppDelegateBase.h"
+
+@interface VUAppDelegate : VUAppDelegateBase <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

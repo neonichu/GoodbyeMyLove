@@ -7,6 +7,7 @@
 //
 
 #import "GMLGameLayer.h"
+#import "GMLPeople.h"
 #import "GMLPlayer.h"
 
 @interface GMLGameLayer ()
@@ -61,6 +62,9 @@
         self.player = [GMLPlayer spriteWithFile:@"dude1.png"];
         [self.player setPosition:ccp(size.width / 2, size.height / 2)];
         [self addChild:self.player];
+        
+        // TODO: Create other people
+        [GMLPeople namesWithLimit:10];
         
         [self schedule:@selector(gameLoop:) interval:1.0/60.0];
     }

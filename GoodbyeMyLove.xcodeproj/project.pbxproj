@@ -49,6 +49,38 @@
 		8A8D977914B7415500B14762 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D977814B7415500B14762 /* QuartzCore.framework */; };
 		8A8D977B14B7416D00B14762 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D977A14B7416D00B14762 /* OpenGL.framework */; };
 		8A8D977D14B7417D00B14762 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D977C14B7417C00B14762 /* libz.dylib */; };
+		8A8D978014B7463500B14762 /* GMLPeople.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D977F14B7463500B14762 /* GMLPeople.m */; };
+		8A8D978114B7463500B14762 /* GMLPeople.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D977F14B7463500B14762 /* GMLPeople.m */; };
+		8A8D978314B746BA00B14762 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D978214B746BA00B14762 /* AddressBook.framework */; };
+		8AB82C6614B753B900FC71EE /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB82C6514B753B900FC71EE /* AddressBook.framework */; };
+		8AB82C6B14B754B500FC71EE /* VUAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB82C6A14B754B500FC71EE /* VUAddressBook.m */; };
+		8AB82C6E14B754CE00FC71EE /* VUPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB82C6D14B754CE00FC71EE /* VUPerson.m */; };
+		8AB82C7114B75B5F00FC71EE /* VUAppDelegateBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB82C7014B75B5F00FC71EE /* VUAppDelegateBase.m */; };
+		8AB82C7214B75B5F00FC71EE /* VUAppDelegateBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB82C7014B75B5F00FC71EE /* VUAppDelegateBase.m */; };
+		8AB82C7414B75CEA00FC71EE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB82C7314B75CEA00FC71EE /* AudioToolbox.framework */; };
+		8AB82C7614B75CFC00FC71EE /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB82C7514B75CFC00FC71EE /* OpenAL.framework */; };
+		8AB82C7714B7672200FC71EE /* 443238_Sorry.MP3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D972514B3B40400B14762 /* 443238_Sorry.MP3 */; };
+		8AB82C7A14B7672200FC71EE /* body.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D971214B354BB00B14762 /* body.png */; };
+		8AB82C7B14B7672200FC71EE /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D971314B354BB00B14762 /* bubble.png */; };
+		8AB82C7C14B7672200FC71EE /* dude1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D971414B354BB00B14762 /* dude1.png */; };
+		8AB82C7D14B7672200FC71EE /* dude2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D971514B354BB00B14762 /* dude2.png */; };
+		8AB82C7E14B7672200FC71EE /* eyes.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D971614B354BB00B14762 /* eyes.png */; };
+		8AB82C7F14B7672200FC71EE /* Gubblebum BlacknBlocky.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AF8D614B2FEB200AD9089 /* Gubblebum BlacknBlocky.ttf */; };
+		8AB82C8014B7672200FC71EE /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D971714B354BB00B14762 /* head.png */; };
+		8AB82C8114B7672200FC71EE /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D971814B354BB00B14762 /* heart.png */; };
+		8AB82C8214B7672200FC71EE /* legs.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D971914B354BB00B14762 /* legs.png */; };
+		8AB82C8314B7672200FC71EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D970614B331C500B14762 /* Localizable.strings */; };
+		8AB82C8414B7672200FC71EE /* meteor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D972614B3B40400B14762 /* meteor.mp3 */; };
+		8AB82C8514B7672200FC71EE /* zisch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D972714B3B40400B14762 /* zisch.mp3 */; };
+		8AB82C8614B7677700FC71EE /* asteroid.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D970B14B335DB00B14762 /* asteroid.png */; };
+		8AB82C8714B7677700FC71EE /* backdrop.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC85B9C14B32329006AFE5E /* backdrop.png */; };
+		8AB82C8914B767A200FC71EE /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 8AB82C8814B767A200FC71EE /* iTunesArtwork */; };
+		8AB82C9114B7680E00FC71EE /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB82C8B14B7680E00FC71EE /* Icon-72.png */; };
+		8AB82C9314B7680E00FC71EE /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB82C8C14B7680E00FC71EE /* Icon-Small-50.png */; };
+		8AB82C9514B7680E00FC71EE /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB82C8D14B7680E00FC71EE /* Icon-Small.png */; };
+		8AB82C9714B7680E00FC71EE /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB82C8E14B7680E00FC71EE /* Icon-Small@2x.png */; };
+		8AB82C9914B7680E00FC71EE /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB82C8F14B7680E00FC71EE /* Icon.png */; };
+		8AB82C9B14B7680E00FC71EE /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB82C9014B7680E00FC71EE /* Icon@2x.png */; };
 		8AC85B9314B31BA3006AFE5E /* GMLGameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC85B9214B31BA3006AFE5E /* GMLGameLayer.m */; };
 		8AC85B9714B31BB9006AFE5E /* GMLMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC85B9614B31BB9006AFE5E /* GMLMenuLayer.m */; };
 		8AC85B9914B32024006AFE5E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC85B9814B32024006AFE5E /* QuartzCore.framework */; };
@@ -90,7 +122,7 @@
 		8A8D972514B3B40400B14762 /* 443238_Sorry.MP3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 443238_Sorry.MP3; path = Assets/443238_Sorry.MP3; sourceTree = SOURCE_ROOT; };
 		8A8D972614B3B40400B14762 /* meteor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = meteor.mp3; path = Assets/meteor.mp3; sourceTree = SOURCE_ROOT; };
 		8A8D972714B3B40400B14762 /* zisch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = zisch.mp3; path = Assets/zisch.mp3; sourceTree = SOURCE_ROOT; };
-		8A8D972B14B3B4C200B14762 /* libCocosDenshion.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCocosDenshion.a; path = "cocos2d/build/Release-iphoneos/libCocosDenshion.a"; sourceTree = "<group>"; };
+		8A8D972B14B3B4C200B14762 /* libCocosDenshion.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCocosDenshion.a; path = "cocos2d/build/Release-iphoneos/libCocosDenshion.a"; sourceTree = "<group>"; };
 		8A8D972D14B3B4ED00B14762 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		8A8D972F14B3B50600B14762 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8A8D973114B3B51200B14762 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -106,11 +138,30 @@
 		8A8D974C14B3B58E00B14762 /* VUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUAppDelegate.m; sourceTree = "<group>"; };
 		8A8D974F14B3B58F00B14762 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		8A8D975F14B73C6000B14762 /* VUMacSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VUMacSupport.h; sourceTree = "<group>"; };
-		8A8D977414B73F4300B14762 /* libcocos2d.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libcocos2d.a; path = cocos2d/build/Release/libcocos2d.a; sourceTree = "<group>"; };
-		8A8D977614B73F4E00B14762 /* libCocosDenshion.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCocosDenshion.a; path = cocos2d/build/Release/libCocosDenshion.a; sourceTree = "<group>"; };
+		8A8D977414B73F4300B14762 /* libcocos2d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcocos2d.a; path = cocos2d/build/Release/libcocos2d.a; sourceTree = "<group>"; };
+		8A8D977614B73F4E00B14762 /* libCocosDenshion.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCocosDenshion.a; path = cocos2d/build/Release/libCocosDenshion.a; sourceTree = "<group>"; };
 		8A8D977814B7415500B14762 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		8A8D977A14B7416D00B14762 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = DEVELOPER_DIR; };
 		8A8D977C14B7417C00B14762 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
+		8A8D977E14B7463500B14762 /* GMLPeople.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLPeople.h; sourceTree = "<group>"; };
+		8A8D977F14B7463500B14762 /* GMLPeople.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLPeople.m; sourceTree = "<group>"; };
+		8A8D978214B746BA00B14762 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		8AB82C6514B753B900FC71EE /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/AddressBook.framework; sourceTree = DEVELOPER_DIR; };
+		8AB82C6914B754B500FC71EE /* VUAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VUAddressBook.h; sourceTree = "<group>"; };
+		8AB82C6A14B754B500FC71EE /* VUAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VUAddressBook.m; sourceTree = "<group>"; };
+		8AB82C6C14B754CE00FC71EE /* VUPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VUPerson.h; sourceTree = "<group>"; };
+		8AB82C6D14B754CE00FC71EE /* VUPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VUPerson.m; sourceTree = "<group>"; };
+		8AB82C6F14B75B5F00FC71EE /* VUAppDelegateBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VUAppDelegateBase.h; path = GoodbyeMyLove/VUAppDelegateBase.h; sourceTree = "<group>"; };
+		8AB82C7014B75B5F00FC71EE /* VUAppDelegateBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VUAppDelegateBase.m; path = GoodbyeMyLove/VUAppDelegateBase.m; sourceTree = "<group>"; };
+		8AB82C7314B75CEA00FC71EE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		8AB82C7514B75CFC00FC71EE /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/OpenAL.framework; sourceTree = DEVELOPER_DIR; };
+		8AB82C8814B767A200FC71EE /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Icons/iTunesArtwork; sourceTree = "<group>"; };
+		8AB82C8B14B7680E00FC71EE /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Icons/Icon-72.png"; sourceTree = "<group>"; };
+		8AB82C8C14B7680E00FC71EE /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Icons/Icon-Small-50.png"; sourceTree = "<group>"; };
+		8AB82C8D14B7680E00FC71EE /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Icons/Icon-Small.png"; sourceTree = "<group>"; };
+		8AB82C8E14B7680E00FC71EE /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Icons/Icon-Small@2x.png"; sourceTree = "<group>"; };
+		8AB82C8F14B7680E00FC71EE /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Icons/Icon.png; sourceTree = "<group>"; };
+		8AB82C9014B7680E00FC71EE /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Icons/Icon@2x.png"; sourceTree = "<group>"; };
 		8AC85B9114B31BA3006AFE5E /* GMLGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLGameLayer.h; path = GoodbyeMyLove/GMLGameLayer.h; sourceTree = "<group>"; };
 		8AC85B9214B31BA3006AFE5E /* GMLGameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMLGameLayer.m; path = GoodbyeMyLove/GMLGameLayer.m; sourceTree = "<group>"; };
 		8AC85B9514B31BB9006AFE5E /* GMLMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLMenuLayer.h; path = GoodbyeMyLove/GMLMenuLayer.h; sourceTree = "<group>"; };
@@ -126,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8D978314B746BA00B14762 /* AddressBook.framework in Frameworks */,
 				8A8D973214B3B51200B14762 /* AudioToolbox.framework in Frameworks */,
 				8A8D973014B3B50600B14762 /* AVFoundation.framework in Frameworks */,
 				8A8D972E14B3B4ED00B14762 /* OpenAL.framework in Frameworks */,
@@ -144,6 +196,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AB82C7614B75CFC00FC71EE /* OpenAL.framework in Frameworks */,
+				8AB82C7414B75CEA00FC71EE /* AudioToolbox.framework in Frameworks */,
+				8AB82C6614B753B900FC71EE /* AddressBook.framework in Frameworks */,
 				8A8D977D14B7417D00B14762 /* libz.dylib in Frameworks */,
 				8A8D977B14B7416D00B14762 /* OpenGL.framework in Frameworks */,
 				8A8D977914B7415500B14762 /* QuartzCore.framework in Frameworks */,
@@ -162,7 +217,9 @@
 				8A8D975E14B3B78800B14762 /* Common Code */,
 				8A2AF8C214B2F65E00AD9089 /* GoodbyeMyLove */,
 				8A8D973F14B3B58E00B14762 /* GoodbyeMyLove Mac */,
+				8AB82C8A14B767EA00FC71EE /* Icons */,
 				8A2AF8BB14B2F65E00AD9089 /* Frameworks */,
+				8AB82C6814B7548D00FC71EE /* Platform Support */,
 				8A2AF8B914B2F65E00AD9089 /* Products */,
 				8A2AF8D314B2FC6D00AD9089 /* Resources */,
 			);
@@ -186,11 +243,15 @@
 				8A8D977614B73F4E00B14762 /* libCocosDenshion.a */,
 				8A2AFA2714B3047E00AD9089 /* libz.dylib */,
 				8A8D977C14B7417C00B14762 /* libz.dylib */,
+				8A8D978214B746BA00B14762 /* AddressBook.framework */,
+				8AB82C6514B753B900FC71EE /* AddressBook.framework */,
 				8A8D973114B3B51200B14762 /* AudioToolbox.framework */,
+				8AB82C7314B75CEA00FC71EE /* AudioToolbox.framework */,
 				8A8D972F14B3B50600B14762 /* AVFoundation.framework */,
 				8A2AF8C014B2F65E00AD9089 /* CoreGraphics.framework */,
 				8A2AF8BE14B2F65E00AD9089 /* Foundation.framework */,
 				8A8D972D14B3B4ED00B14762 /* OpenAL.framework */,
+				8AB82C7514B75CFC00FC71EE /* OpenAL.framework */,
 				8A8D977A14B7416D00B14762 /* OpenGL.framework */,
 				8A2AFA2514B3046700AD9089 /* OpenGLES.framework */,
 				8AC85B9814B32024006AFE5E /* QuartzCore.framework */,
@@ -289,11 +350,40 @@
 				8AC85B9214B31BA3006AFE5E /* GMLGameLayer.m */,
 				8AC85B9514B31BB9006AFE5E /* GMLMenuLayer.h */,
 				8AC85B9614B31BB9006AFE5E /* GMLMenuLayer.m */,
+				8A8D977E14B7463500B14762 /* GMLPeople.h */,
+				8A8D977F14B7463500B14762 /* GMLPeople.m */,
 				8A8D972214B35B4200B14762 /* GMLPlayer.h */,
 				8A8D972314B35B4200B14762 /* GMLPlayer.m */,
-				8A8D975F14B73C6000B14762 /* VUMacSupport.h */,
+				8AB82C6F14B75B5F00FC71EE /* VUAppDelegateBase.h */,
+				8AB82C7014B75B5F00FC71EE /* VUAppDelegateBase.m */,
 			);
 			name = "Common Code";
+			sourceTree = "<group>";
+		};
+		8AB82C6814B7548D00FC71EE /* Platform Support */ = {
+			isa = PBXGroup;
+			children = (
+				8AB82C6914B754B500FC71EE /* VUAddressBook.h */,
+				8AB82C6A14B754B500FC71EE /* VUAddressBook.m */,
+				8AB82C6C14B754CE00FC71EE /* VUPerson.h */,
+				8AB82C6D14B754CE00FC71EE /* VUPerson.m */,
+				8A8D975F14B73C6000B14762 /* VUMacSupport.h */,
+			);
+			name = "Platform Support";
+			sourceTree = "<group>";
+		};
+		8AB82C8A14B767EA00FC71EE /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				8AB82C8B14B7680E00FC71EE /* Icon-72.png */,
+				8AB82C8C14B7680E00FC71EE /* Icon-Small-50.png */,
+				8AB82C8D14B7680E00FC71EE /* Icon-Small.png */,
+				8AB82C8E14B7680E00FC71EE /* Icon-Small@2x.png */,
+				8AB82C8F14B7680E00FC71EE /* Icon.png */,
+				8AB82C9014B7680E00FC71EE /* Icon@2x.png */,
+				8AB82C8814B767A200FC71EE /* iTunesArtwork */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +474,12 @@
 				8A8D972814B3B40400B14762 /* 443238_Sorry.MP3 in Resources */,
 				8A8D972914B3B40400B14762 /* meteor.mp3 in Resources */,
 				8A8D972A14B3B40400B14762 /* zisch.mp3 in Resources */,
+				8AB82C9114B7680E00FC71EE /* Icon-72.png in Resources */,
+				8AB82C9314B7680E00FC71EE /* Icon-Small-50.png in Resources */,
+				8AB82C9514B7680E00FC71EE /* Icon-Small.png in Resources */,
+				8AB82C9714B7680E00FC71EE /* Icon-Small@2x.png in Resources */,
+				8AB82C9914B7680E00FC71EE /* Icon.png in Resources */,
+				8AB82C9B14B7680E00FC71EE /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +487,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AB82C8614B7677700FC71EE /* asteroid.png in Resources */,
+				8AB82C8714B7677700FC71EE /* backdrop.png in Resources */,
+				8AB82C7714B7672200FC71EE /* 443238_Sorry.MP3 in Resources */,
+				8AB82C7A14B7672200FC71EE /* body.png in Resources */,
+				8AB82C7B14B7672200FC71EE /* bubble.png in Resources */,
+				8AB82C7C14B7672200FC71EE /* dude1.png in Resources */,
+				8AB82C7D14B7672200FC71EE /* dude2.png in Resources */,
+				8AB82C7E14B7672200FC71EE /* eyes.png in Resources */,
+				8AB82C7F14B7672200FC71EE /* Gubblebum BlacknBlocky.ttf in Resources */,
+				8AB82C8014B7672200FC71EE /* head.png in Resources */,
+				8AB82C8114B7672200FC71EE /* heart.png in Resources */,
+				8AB82C8214B7672200FC71EE /* legs.png in Resources */,
+				8AB82C8314B7672200FC71EE /* Localizable.strings in Resources */,
+				8AB82C8414B7672200FC71EE /* meteor.mp3 in Resources */,
+				8AB82C8514B7672200FC71EE /* zisch.mp3 in Resources */,
 				8A8D975014B3B58F00B14762 /* MainMenu.xib in Resources */,
+				8AB82C8914B767A200FC71EE /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +520,10 @@
 				8AC85B9314B31BA3006AFE5E /* GMLGameLayer.m in Sources */,
 				8AC85B9714B31BB9006AFE5E /* GMLMenuLayer.m in Sources */,
 				8A8D972414B35B4300B14762 /* GMLPlayer.m in Sources */,
+				8A8D978014B7463500B14762 /* GMLPeople.m in Sources */,
+				8AB82C6B14B754B500FC71EE /* VUAddressBook.m in Sources */,
+				8AB82C6E14B754CE00FC71EE /* VUPerson.m in Sources */,
+				8AB82C7114B75B5F00FC71EE /* VUAppDelegateBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +536,8 @@
 				8A8D975914B3B6D300B14762 /* GMLPlayer.m in Sources */,
 				8A8D974614B3B58E00B14762 /* main.m in Sources */,
 				8A8D974D14B3B58E00B14762 /* VUAppDelegate.m in Sources */,
+				8A8D978114B7463500B14762 /* GMLPeople.m in Sources */,
+				8AB82C7214B75B5F00FC71EE /* VUAppDelegateBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,8 +651,9 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/GoodbyeMyLove-hfdfdrvowmzvnkdkueudutzgpwyv/Build/Products/Debug-iphoneos\"",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -559,7 +678,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/GoodbyeMyLove-hfdfdrvowmzvnkdkueudutzgpwyv/Build/Products/Debug-iphoneos\"",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -594,6 +713,7 @@
 				8A8D975314B3B58F00B14762 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

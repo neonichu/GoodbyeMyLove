@@ -6,15 +6,26 @@
 //  Copyright (c) 2012 Crocodil.us. All rights reserved.
 //
 
+#import "cocos2d.h"
+
 #import "VUAppDelegate.h"
 
 @implementation VUAppDelegate
 
-@synthesize window = _window;
+@synthesize glView;
+@synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+	CC_DIRECTOR_INIT(CGSizeMake(1280, 720));
+    
+    [self applicationDidFinishLaunching];
+	[self.window setAcceptsMouseMovedEvents:NO];
+}
+
+- (BOOL) applicationShouldTerminateAfterLastWindowClosed: (NSApplication *) theApplication
+{
+	return YES;
 }
 
 @end

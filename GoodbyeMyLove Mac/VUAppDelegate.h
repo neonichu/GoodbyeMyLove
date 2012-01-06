@@ -8,8 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface VUAppDelegate : NSObject <NSApplicationDelegate>
+#import "VUAppDelegateBase.h"
 
-@property (assign) IBOutlet NSWindow *window;
+@interface VUAppDelegate : VUAppDelegateBase <NSApplicationDelegate>
+
+@property (strong) MacGLView* glView;
+@property (strong) NSWindow* window;
 
 @end

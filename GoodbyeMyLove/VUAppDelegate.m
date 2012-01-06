@@ -24,7 +24,6 @@
 	if( ! [CCDirector setDirectorType:kCCDirectorTypeDisplayLink] )
 		[CCDirector setDirectorType:kCCDirectorTypeDefault];
 	
-	
 	CCDirector *director = [CCDirector sharedDirector];
 	
 	self.window.rootViewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
@@ -42,56 +41,42 @@
     }
 	
 	[director setDeviceOrientation:kCCDeviceOrientationPortrait];
-	[director setAnimationInterval:1.0/60];
-	[director setDisplayFPS:YES];
 	
 	[self.window.rootViewController setView:glView];
 	[self.window makeKeyAndVisible];
-	
-	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
     
-	[[CCDirector sharedDirector] runWithScene: [GMLMenuLayer scene]];
-    
-    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"443238_Sorry.MP3"];
+    [self applicationDidFinishLaunching];
 }
 
 -(void)applicationWillResignActive:(UIApplication*)application 
 {
-	[[CCDirector sharedDirector] pause];
+	[self applicationWillResignActive];
 }
 
 -(void)applicationDidBecomeActive:(UIApplication*)application {
-	[[CCDirector sharedDirector] resume];
+	[self applicationDidBecomeActive];
 }
 
 -(void)applicationDidReceiveMemoryWarning:(UIApplication*)application {
-	[[CCDirector sharedDirector] purgeCachedData];
+	[self applicationDidReceiveMemoryWarning];
 }
 
 -(void)applicationDidEnterBackground:(UIApplication*)application {
-	[[CCDirector sharedDirector] stopAnimation];
+	[self applicationDidEnterBackground];
 }
 
 -(void)applicationWillEnterForeground:(UIApplication*)application {
-	[[CCDirector sharedDirector] startAnimation];
+	[self applicationWillEnterForeground];
 }
 
 -(void)applicationWillTerminate:(UIApplication *)application {
-	CCDirector *director = [CCDirector sharedDirector];
-	
-	[[director openGLView] removeFromSuperview];
+	[self applicationWillTerminate];
 	
     self.window = nil;
-	
-	[director end];	
 }
 
 -(void)applicationSignificantTimeChange:(UIApplication *)application {
-	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];
-}
-
--(void)dealloc {
-	[[CCDirector sharedDirector] end];
+	[self applicationSignificantTimeChange];
 }
 
 @end
