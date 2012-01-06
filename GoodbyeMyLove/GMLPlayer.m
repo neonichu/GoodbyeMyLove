@@ -24,17 +24,19 @@
 @synthesize score;
 @synthesize touching;
 
+-(CGRect)rectInPixels {
+    CGSize size = [self contentSizeInPixels];
+    return CGRectMake(-size.width / 2, -size.height / 2, size.width, size.height);
+}
+
+#if TARGET_OS_IPHONE
+
 #pragma mark -
 
 -(BOOL)containsTouchLocation:(UITouch*)touch {
     CGPoint point = [self convertTouchToNodeSpaceAR:touch];
     CGRect rect = [self rectInPixels];
     return CGRectContainsPoint(rect, point);
-}
-
--(CGRect)rectInPixels {
-    CGSize size = [self contentSizeInPixels];
-    return CGRectMake(-size.width / 2, -size.height / 2, size.width, size.height);
 }
 
 #pragma mark -
@@ -66,5 +68,7 @@
     NSLog(@"Moved to: %@", NSStringFromCGPoint(touchPoint));
     self.position = touchPoint;
 }
+
+#endif
 
 @end

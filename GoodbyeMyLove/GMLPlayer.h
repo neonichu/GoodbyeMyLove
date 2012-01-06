@@ -10,6 +10,8 @@
 
 #import "cocos2d.h"
 
+#import "VUMacSupport.h"
+
 @interface GMLPlayer : CCSprite <CCTargetedTouchDelegate>
 
 @property (nonatomic, assign) NSUInteger level;

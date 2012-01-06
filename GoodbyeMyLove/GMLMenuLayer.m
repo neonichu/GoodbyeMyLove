@@ -8,6 +8,7 @@
 
 #import "GMLGameLayer.h"
 #import "GMLMenuLayer.h"
+#import "VUMacSupport.h"
 
 @implementation GMLMenuLayer
 
@@ -37,10 +38,12 @@
     return label;
 }
 
+#if TARGET_OS_IPHONE
 -(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     // TODO: Animate transition
     [[CCDirector sharedDirector] replaceScene:[GMLGameLayer scene]];
 }
+#endif
 
 -(id)init
 {

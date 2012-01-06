@@ -44,6 +44,11 @@
 		8A8D975514B3B6D300B14762 /* GMLGameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC85B9214B31BA3006AFE5E /* GMLGameLayer.m */; };
 		8A8D975714B3B6D300B14762 /* GMLMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC85B9614B31BB9006AFE5E /* GMLMenuLayer.m */; };
 		8A8D975914B3B6D300B14762 /* GMLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D972314B35B4200B14762 /* GMLPlayer.m */; };
+		8A8D977514B73F4300B14762 /* libcocos2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D977414B73F4300B14762 /* libcocos2d.a */; };
+		8A8D977714B73F4F00B14762 /* libCocosDenshion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D977614B73F4E00B14762 /* libCocosDenshion.a */; };
+		8A8D977914B7415500B14762 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D977814B7415500B14762 /* QuartzCore.framework */; };
+		8A8D977B14B7416D00B14762 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D977A14B7416D00B14762 /* OpenGL.framework */; };
+		8A8D977D14B7417D00B14762 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D977C14B7417C00B14762 /* libz.dylib */; };
 		8AC85B9314B31BA3006AFE5E /* GMLGameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC85B9214B31BA3006AFE5E /* GMLGameLayer.m */; };
 		8AC85B9714B31BB9006AFE5E /* GMLMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC85B9614B31BB9006AFE5E /* GMLMenuLayer.m */; };
 		8AC85B9914B32024006AFE5E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC85B9814B32024006AFE5E /* QuartzCore.framework */; };
@@ -100,6 +105,12 @@
 		8A8D974B14B3B58E00B14762 /* VUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VUAppDelegate.h; sourceTree = "<group>"; };
 		8A8D974C14B3B58E00B14762 /* VUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUAppDelegate.m; sourceTree = "<group>"; };
 		8A8D974F14B3B58F00B14762 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		8A8D975F14B73C6000B14762 /* VUMacSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VUMacSupport.h; sourceTree = "<group>"; };
+		8A8D977414B73F4300B14762 /* libcocos2d.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libcocos2d.a; path = cocos2d/build/Release/libcocos2d.a; sourceTree = "<group>"; };
+		8A8D977614B73F4E00B14762 /* libCocosDenshion.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libCocosDenshion.a; path = cocos2d/build/Release/libCocosDenshion.a; sourceTree = "<group>"; };
+		8A8D977814B7415500B14762 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		8A8D977A14B7416D00B14762 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = DEVELOPER_DIR; };
+		8A8D977C14B7417C00B14762 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
 		8AC85B9114B31BA3006AFE5E /* GMLGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLGameLayer.h; path = GoodbyeMyLove/GMLGameLayer.h; sourceTree = "<group>"; };
 		8AC85B9214B31BA3006AFE5E /* GMLGameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMLGameLayer.m; path = GoodbyeMyLove/GMLGameLayer.m; sourceTree = "<group>"; };
 		8AC85B9514B31BB9006AFE5E /* GMLMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLMenuLayer.h; path = GoodbyeMyLove/GMLMenuLayer.h; sourceTree = "<group>"; };
@@ -133,6 +144,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8D977D14B7417D00B14762 /* libz.dylib in Frameworks */,
+				8A8D977B14B7416D00B14762 /* OpenGL.framework in Frameworks */,
+				8A8D977914B7415500B14762 /* QuartzCore.framework in Frameworks */,
+				8A8D977714B73F4F00B14762 /* libCocosDenshion.a in Frameworks */,
+				8A8D977514B73F4300B14762 /* libcocos2d.a in Frameworks */,
 				8A8D973A14B3B58E00B14762 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,15 +181,20 @@
 			isa = PBXGroup;
 			children = (
 				8A2AFA2314B3042900AD9089 /* libcocos2d.a */,
+				8A8D977414B73F4300B14762 /* libcocos2d.a */,
 				8A8D972B14B3B4C200B14762 /* libCocosDenshion.a */,
+				8A8D977614B73F4E00B14762 /* libCocosDenshion.a */,
 				8A2AFA2714B3047E00AD9089 /* libz.dylib */,
+				8A8D977C14B7417C00B14762 /* libz.dylib */,
 				8A8D973114B3B51200B14762 /* AudioToolbox.framework */,
 				8A8D972F14B3B50600B14762 /* AVFoundation.framework */,
 				8A2AF8C014B2F65E00AD9089 /* CoreGraphics.framework */,
 				8A2AF8BE14B2F65E00AD9089 /* Foundation.framework */,
 				8A8D972D14B3B4ED00B14762 /* OpenAL.framework */,
+				8A8D977A14B7416D00B14762 /* OpenGL.framework */,
 				8A2AFA2514B3046700AD9089 /* OpenGLES.framework */,
 				8AC85B9814B32024006AFE5E /* QuartzCore.framework */,
+				8A8D977814B7415500B14762 /* QuartzCore.framework */,
 				8A2AF8BC14B2F65E00AD9089 /* UIKit.framework */,
 				8A8D973914B3B58E00B14762 /* Cocoa.framework */,
 				8A8D973B14B3B58E00B14762 /* Other Frameworks */,
@@ -270,6 +291,7 @@
 				8AC85B9614B31BB9006AFE5E /* GMLMenuLayer.m */,
 				8A8D972214B35B4200B14762 /* GMLPlayer.h */,
 				8A8D972314B35B4200B14762 /* GMLPlayer.m */,
+				8A8D975F14B73C6000B14762 /* VUMacSupport.h */,
 			);
 			name = "Common Code";
 			sourceTree = "<group>";
@@ -507,6 +529,10 @@
 				GCC_PREFIX_HEADER = "GoodbyeMyLove Mac/GoodbyeMyLove Mac-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "GoodbyeMyLove Mac/GoodbyeMyLove Mac-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/GoodbyeMyLove-hfdfdrvowmzvnkdkueudutzgpwyv/Build/Products/Debug-iphoneos\"",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -529,6 +555,10 @@
 				GCC_PREFIX_HEADER = "GoodbyeMyLove Mac/GoodbyeMyLove Mac-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "GoodbyeMyLove Mac/GoodbyeMyLove Mac-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/GoodbyeMyLove-hfdfdrvowmzvnkdkueudutzgpwyv/Build/Products/Debug-iphoneos\"",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
