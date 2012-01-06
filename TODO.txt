@@ -1,0 +1,2 @@
+* Cleanup the source tree
+* Possibly fork cocos2d to push the local modifications upstream
