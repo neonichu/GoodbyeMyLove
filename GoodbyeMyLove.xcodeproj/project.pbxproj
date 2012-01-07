@@ -165,8 +165,8 @@
 		8A8D977814B7415500B14762 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		8A8D977A14B7416D00B14762 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = DEVELOPER_DIR; };
 		8A8D977C14B7417C00B14762 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
-		8A8D977E14B7463500B14762 /* GMLPeople.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLPeople.h; sourceTree = "<group>"; };
-		8A8D977F14B7463500B14762 /* GMLPeople.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLPeople.m; sourceTree = "<group>"; };
+		8A8D977E14B7463500B14762 /* GMLPeople.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLPeople.h; path = GoodbyeMyLove/GMLPeople.h; sourceTree = "<group>"; };
+		8A8D977F14B7463500B14762 /* GMLPeople.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMLPeople.m; path = GoodbyeMyLove/GMLPeople.m; sourceTree = "<group>"; };
 		8A8D978214B746BA00B14762 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		8AAAC0C614B8F35C005BC348 /* JoystixMonospace-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "JoystixMonospace-Regular.ttf"; path = "Assets/JoystixMonospace-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 		8AAAC0C714B8F35C005BC348 /* TrailerGoodbye.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = TrailerGoodbye.m4v; path = Assets/TrailerGoodbye.m4v; sourceTree = SOURCE_ROOT; };
