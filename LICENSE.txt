@@ -1,4 +1,4 @@
-Application code (C) 2012 Boris Buegling
+Application code by Boris Buegling
 Written & Desinged by Torsten Hartmann
 Music by MrMusicalLion
 

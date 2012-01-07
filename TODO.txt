@@ -1,3 +1,0 @@
-* Cleanup the source tree
-* Possibly fork cocos2d to push the local modifications upstream
-* Fix the Mac OS X version so that it works and compiles again
