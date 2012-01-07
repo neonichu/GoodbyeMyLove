@@ -10,6 +10,6 @@
 
 @interface GMLPeople : NSObject
 
-+(NSArray*)namesWithLimit:(NSUInteger)limit;
++(NSArray*)lovedOnesWithLimit:(NSUInteger)limit;
 
 @end

@@ -8,6 +8,7 @@
 
 #import <AddressBook/AddressBook.h>
 
+#import "GMLLovedOne.h"
 #import "GMLPeople.h"
 #import "VUMacSupport.h"
 
@@ -38,8 +39,8 @@
     return names;
 }
 
-+(NSArray*)namesWithLimit:(NSUInteger)limit {
-    NSMutableArray* names = [NSMutableArray array];
++(NSArray*)lovedOnesWithLimit:(NSUInteger)limit {
+    NSMutableArray* lovedOnes = [NSMutableArray array];
     
     VUAddressBook* addressBook = [VUAddressBook sharedAddressBook];
     NSMutableArray* abNames = [NSMutableArray array];
@@ -50,17 +51,23 @@
         }
     }
     
+    BOOL fromAB = YES;
     if (abNames.count <= limit) {
-        [names addObjectsFromArray:abNames];
+        for (NSString* name in abNames) {
+            [lovedOnes addObject:[GMLLovedOne lovedOneWithName:name fromAddressBook:fromAB]];
+        }
+        
         abNames = [self staticNames];
+        fromAB = NO;
     }
         
-    for (NSUInteger i = names.count; i < limit; i++) {
-            [names addObject:[abNames objectAtIndex:arc4random() % abNames.count]];
+    for (NSUInteger i = lovedOnes.count; i < limit; i++) {
+        NSString* name = [abNames objectAtIndex:arc4random() % abNames.count];
+        [lovedOnes addObject:[GMLLovedOne lovedOneWithName:name fromAddressBook:fromAB]];
     }
     
-    NSAssert(names.count == limit, @"Not enough names were generated.");
-    return names;
+    NSAssert(lovedOnes.count == limit, @"Not enough names were generated.");
+    return lovedOnes;
 }
 
 @end

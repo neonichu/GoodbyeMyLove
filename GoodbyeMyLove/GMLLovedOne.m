@@ -10,9 +10,30 @@
 
 @implementation GMLLovedOne
 
-// TODO: big head mode
 // TODO: random generated dudes
 
+@synthesize fromAddressBook;
+@dynamic isLovedOne;
+@synthesize name;
+@synthesize points;
 
+#pragma mark -
+
++(id)lovedOne {
+    return [self spriteWithFile:@"dude2.png"];
+}
+
++(id)lovedOneWithName:(NSString*)name fromAddressBook:(BOOL)fromAddressBook {
+    id result = [self lovedOne];
+    [result setFromAddressBook:fromAddressBook];
+    [result setName:name];
+    return result;
+}
+
+#pragma mark -
+
+-(BOOL)isLovedOne {
+    return self.points > 0;
+}
 
 @end

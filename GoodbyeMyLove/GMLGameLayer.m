@@ -9,6 +9,7 @@
 #import "GMLAsteroid.h"
 #import "GMLGameLayer.h"
 #import "GMLGameOverLayer.h"
+#import "GMLLovedOne.h"
 #import "GMLPeople.h"
 #import "GMLPlayer.h"
 
@@ -71,14 +72,11 @@
     [self.asteroid setPosition:ccp(size.width / 2, size.height + asteroid.contentSize.height / 6)];
     [self.player setPosition:ccp(size.width / 2, size.height / 2)];
     
-    // TODO: Create other people
-    //NSArray* names = [GMLPeople namesWithLimit:npcCount];
-    for (int i = 0; i < npcCount; i++) {
-        CCSprite* npc = [CCSprite spriteWithFile:@"dude1.png"];
-        // FIXME: Sky should be off limits
-        [npc setPosition:ccp(arc4random() % (int)size.width, arc4random() % (int)size.height)];
-        [self addChild:npc];
-        [self.npcs addObject:npc];
+    // TODO: Mark actual loved ones with score
+    for (GMLLovedOne* lovedOne in [GMLPeople lovedOnesWithLimit:npcCount]) {
+        [lovedOne setPosition:ccp(arc4random() % (int)size.width, arc4random() % (int)(size.height - size.height / 3))];
+        [self addChild:lovedOne];
+        [self.npcs addObject:lovedOne];
     }
 }
 
