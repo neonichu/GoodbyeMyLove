@@ -30,8 +30,8 @@
 	self.window.rootViewController.wantsFullScreenLayout = YES;
 	
 	EAGLView *glView = [EAGLView viewWithFrame:[window bounds]
-								   pixelFormat:kEAGLColorFormatRGB565	// kEAGLColorFormatRGBA8
-								   depthFormat:0						// GL_DEPTH_COMPONENT16_OES
+								   pixelFormat:kEAGLColorFormatRGB565
+								   depthFormat:0
 						];
 	
 	[director setOpenGLView:glView];
@@ -45,7 +45,8 @@
 	[self.window.rootViewController setView:glView];
 	[self.window makeKeyAndVisible];
     
-    [self applicationDidFinishLaunching];
+    CCScene* scene = [self applicationDidFinishLaunching];
+    ((GMLMenuLayer*)[scene.children objectAtIndex:0]).rootVC = self.window.rootViewController;
 }
 
 -(void)applicationWillResignActive:(UIApplication*)application 

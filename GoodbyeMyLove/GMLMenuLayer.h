@@ -6,12 +6,17 @@
 //  Copyright (c) 2012 Crocodil.us. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#if TARGET_OS_IPHONE
+#import <GameKit/GameKit.h>
+#import <UIKit/UIKit.h>
+#endif
 
-#import "cocos2d.h"
+#import "GMLBaseLayer.h"
 
-@interface GMLMenuLayer : CCLayer
+@interface GMLMenuLayer : GMLBaseLayer <GKAchievementViewControllerDelegate>
 
-+(CCScene*)scene;
+#if TARGET_OS_IPHONE
+@property (nonatomic, assign) UIViewController* rootVC;
+#endif
 
 @end

@@ -12,9 +12,19 @@
 
 #import "VUMacSupport.h"
 
+@protocol GMLPlayerDelegate <NSObject>
+
+-(void)playerMovedToPoint:(CGPoint)point;
+
+@end
+
+#pragma mark -
+
 @interface GMLPlayer : CCSprite <CCTargetedTouchDelegate>
 
 @property (nonatomic, assign) NSUInteger level;
 @property (nonatomic, assign) NSUInteger score;
+
++(id)player;
 
 @end

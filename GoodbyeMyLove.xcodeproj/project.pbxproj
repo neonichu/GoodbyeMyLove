@@ -13,11 +13,17 @@
 		8A2AF8C914B2F65E00AD9089 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2AF8C814B2F65E00AD9089 /* main.m */; };
 		8A2AF8CD14B2F65E00AD9089 /* VUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2AF8CC14B2F65E00AD9089 /* VUAppDelegate.m */; };
 		8A2AF8D514B2FCAB00AD9089 /* backdrop-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AF8D414B2FCAB00AD9089 /* backdrop-ipad.png */; };
-		8A2AF8D714B2FEB200AD9089 /* Gubblebum BlacknBlocky.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AF8D614B2FEB200AD9089 /* Gubblebum BlacknBlocky.ttf */; };
+		8A2AF8D714B2FEB200AD9089 /* Gubblebum-BlacknBlocky.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AF8D614B2FEB200AD9089 /* Gubblebum-BlacknBlocky.ttf */; };
 		8A2AF9E614B3003600AD9089 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2AF9E514B3003600AD9089 /* RootViewController.m */; };
 		8A2AFA2414B3042900AD9089 /* libcocos2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2AFA2314B3042900AD9089 /* libcocos2d.a */; };
 		8A2AFA2614B3046700AD9089 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2AFA2514B3046700AD9089 /* OpenGLES.framework */; };
 		8A2AFA2814B3047E00AD9089 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2AFA2714B3047E00AD9089 /* libz.dylib */; };
+		8A33574114B87F31002A02FE /* GMLLovedOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A33574014B87F31002A02FE /* GMLLovedOne.m */; };
+		8A33574414B87F57002A02FE /* GMLAsteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A33574314B87F57002A02FE /* GMLAsteroid.m */; };
+		8A33574714B87F8B002A02FE /* GMLGameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A33574614B87F8B002A02FE /* GMLGameOverLayer.m */; };
+		8A33574A14B88BF5002A02FE /* GMLPersistentStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A33574914B88BF5002A02FE /* GMLPersistentStorage.m */; };
+		8A3D793614B8A3E20071AF42 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3D793514B8A3E20071AF42 /* GameKit.framework */; };
+		8A3D793B14B8A6D90071AF42 /* GMLBaseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D793A14B8A6D90071AF42 /* GMLBaseLayer.m */; };
 		8A8D970814B331C500B14762 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D970614B331C500B14762 /* Localizable.strings */; };
 		8A8D970C14B335DB00B14762 /* asteroid-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D970A14B335DB00B14762 /* asteroid-hd.png */; };
 		8A8D970D14B335DB00B14762 /* asteroid.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D970B14B335DB00B14762 /* asteroid.png */; };
@@ -52,6 +58,10 @@
 		8A8D978014B7463500B14762 /* GMLPeople.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D977F14B7463500B14762 /* GMLPeople.m */; };
 		8A8D978114B7463500B14762 /* GMLPeople.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D977F14B7463500B14762 /* GMLPeople.m */; };
 		8A8D978314B746BA00B14762 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8D978214B746BA00B14762 /* AddressBook.framework */; };
+		8AAAC0C814B8F35C005BC348 /* JoystixMonospace-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AAAC0C614B8F35C005BC348 /* JoystixMonospace-Regular.ttf */; };
+		8AAAC0C914B8F35C005BC348 /* JoystixMonospace-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AAAC0C614B8F35C005BC348 /* JoystixMonospace-Regular.ttf */; };
+		8AAAC0CA14B8F35C005BC348 /* TrailerGoodbye.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 8AAAC0C714B8F35C005BC348 /* TrailerGoodbye.m4v */; };
+		8AAAC0CB14B8F35C005BC348 /* TrailerGoodbye.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 8AAAC0C714B8F35C005BC348 /* TrailerGoodbye.m4v */; };
 		8AB82C6614B753B900FC71EE /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB82C6514B753B900FC71EE /* AddressBook.framework */; };
 		8AB82C6B14B754B500FC71EE /* VUAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB82C6A14B754B500FC71EE /* VUAddressBook.m */; };
 		8AB82C6E14B754CE00FC71EE /* VUPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB82C6D14B754CE00FC71EE /* VUPerson.m */; };
@@ -65,7 +75,7 @@
 		8AB82C7C14B7672200FC71EE /* dude1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D971414B354BB00B14762 /* dude1.png */; };
 		8AB82C7D14B7672200FC71EE /* dude2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D971514B354BB00B14762 /* dude2.png */; };
 		8AB82C7E14B7672200FC71EE /* eyes.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D971614B354BB00B14762 /* eyes.png */; };
-		8AB82C7F14B7672200FC71EE /* Gubblebum BlacknBlocky.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AF8D614B2FEB200AD9089 /* Gubblebum BlacknBlocky.ttf */; };
+		8AB82C7F14B7672200FC71EE /* Gubblebum-BlacknBlocky.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AF8D614B2FEB200AD9089 /* Gubblebum-BlacknBlocky.ttf */; };
 		8AB82C8014B7672200FC71EE /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D971714B354BB00B14762 /* head.png */; };
 		8AB82C8114B7672200FC71EE /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D971814B354BB00B14762 /* heart.png */; };
 		8AB82C8214B7672200FC71EE /* legs.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D971914B354BB00B14762 /* legs.png */; };
@@ -100,12 +110,24 @@
 		8A2AF8CB14B2F65E00AD9089 /* VUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VUAppDelegate.h; sourceTree = "<group>"; };
 		8A2AF8CC14B2F65E00AD9089 /* VUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VUAppDelegate.m; sourceTree = "<group>"; };
 		8A2AF8D414B2FCAB00AD9089 /* backdrop-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backdrop-ipad.png"; path = "Assets/backdrop-ipad.png"; sourceTree = SOURCE_ROOT; };
-		8A2AF8D614B2FEB200AD9089 /* Gubblebum BlacknBlocky.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gubblebum BlacknBlocky.ttf"; path = "Assets/Gubblebum BlacknBlocky.ttf"; sourceTree = SOURCE_ROOT; };
+		8A2AF8D614B2FEB200AD9089 /* Gubblebum-BlacknBlocky.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gubblebum-BlacknBlocky.ttf"; path = "Assets/Gubblebum-BlacknBlocky.ttf"; sourceTree = SOURCE_ROOT; };
 		8A2AF9E414B3003600AD9089 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		8A2AF9E514B3003600AD9089 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		8A2AFA2314B3042900AD9089 /* libcocos2d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcocos2d.a; path = "cocos2d/build/Release-iphoneos/libcocos2d.a"; sourceTree = "<group>"; };
 		8A2AFA2514B3046700AD9089 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		8A2AFA2714B3047E00AD9089 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		8A33573F14B87F31002A02FE /* GMLLovedOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLLovedOne.h; path = GoodbyeMyLove/GMLLovedOne.h; sourceTree = "<group>"; };
+		8A33574014B87F31002A02FE /* GMLLovedOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMLLovedOne.m; path = GoodbyeMyLove/GMLLovedOne.m; sourceTree = "<group>"; };
+		8A33574214B87F57002A02FE /* GMLAsteroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLAsteroid.h; path = GoodbyeMyLove/GMLAsteroid.h; sourceTree = "<group>"; };
+		8A33574314B87F57002A02FE /* GMLAsteroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMLAsteroid.m; path = GoodbyeMyLove/GMLAsteroid.m; sourceTree = "<group>"; };
+		8A33574514B87F8B002A02FE /* GMLGameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLGameOverLayer.h; path = GoodbyeMyLove/GMLGameOverLayer.h; sourceTree = "<group>"; };
+		8A33574614B87F8B002A02FE /* GMLGameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMLGameOverLayer.m; path = GoodbyeMyLove/GMLGameOverLayer.m; sourceTree = "<group>"; };
+		8A33574814B88BF4002A02FE /* GMLPersistentStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLPersistentStorage.h; path = GoodbyeMyLove/GMLPersistentStorage.h; sourceTree = "<group>"; };
+		8A33574914B88BF5002A02FE /* GMLPersistentStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMLPersistentStorage.m; path = GoodbyeMyLove/GMLPersistentStorage.m; sourceTree = "<group>"; };
+		8A3D793514B8A3E20071AF42 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		8A3D793914B8A6D90071AF42 /* GMLBaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLBaseLayer.h; path = GoodbyeMyLove/GMLBaseLayer.h; sourceTree = "<group>"; };
+		8A3D793A14B8A6D90071AF42 /* GMLBaseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMLBaseLayer.m; path = GoodbyeMyLove/GMLBaseLayer.m; sourceTree = "<group>"; };
+		8A3D793C14B8AB390071AF42 /* GMLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLHelper.h; path = GoodbyeMyLove/GMLHelper.h; sourceTree = "<group>"; };
 		8A8D970714B331C500B14762 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8A8D970A14B335DB00B14762 /* asteroid-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "asteroid-hd.png"; path = "Assets/asteroid-hd.png"; sourceTree = SOURCE_ROOT; };
 		8A8D970B14B335DB00B14762 /* asteroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = asteroid.png; path = Assets/asteroid.png; sourceTree = SOURCE_ROOT; };
@@ -146,6 +168,8 @@
 		8A8D977E14B7463500B14762 /* GMLPeople.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLPeople.h; sourceTree = "<group>"; };
 		8A8D977F14B7463500B14762 /* GMLPeople.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLPeople.m; sourceTree = "<group>"; };
 		8A8D978214B746BA00B14762 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		8AAAC0C614B8F35C005BC348 /* JoystixMonospace-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "JoystixMonospace-Regular.ttf"; path = "Assets/JoystixMonospace-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		8AAAC0C714B8F35C005BC348 /* TrailerGoodbye.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = TrailerGoodbye.m4v; path = Assets/TrailerGoodbye.m4v; sourceTree = SOURCE_ROOT; };
 		8AB82C6514B753B900FC71EE /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = SDKs/MacOSX10.7.sdk/System/Library/Frameworks/AddressBook.framework; sourceTree = DEVELOPER_DIR; };
 		8AB82C6914B754B500FC71EE /* VUAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VUAddressBook.h; sourceTree = "<group>"; };
 		8AB82C6A14B754B500FC71EE /* VUAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VUAddressBook.m; sourceTree = "<group>"; };
@@ -177,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A3D793614B8A3E20071AF42 /* GameKit.framework in Frameworks */,
 				8A8D978314B746BA00B14762 /* AddressBook.framework in Frameworks */,
 				8A8D973214B3B51200B14762 /* AudioToolbox.framework in Frameworks */,
 				8A8D973014B3B50600B14762 /* AVFoundation.framework in Frameworks */,
@@ -215,10 +240,10 @@
 			isa = PBXGroup;
 			children = (
 				8A8D975E14B3B78800B14762 /* Common Code */,
+				8A2AF8BB14B2F65E00AD9089 /* Frameworks */,
 				8A2AF8C214B2F65E00AD9089 /* GoodbyeMyLove */,
 				8A8D973F14B3B58E00B14762 /* GoodbyeMyLove Mac */,
 				8AB82C8A14B767EA00FC71EE /* Icons */,
-				8A2AF8BB14B2F65E00AD9089 /* Frameworks */,
 				8AB82C6814B7548D00FC71EE /* Platform Support */,
 				8A2AF8B914B2F65E00AD9089 /* Products */,
 				8A2AF8D314B2FC6D00AD9089 /* Resources */,
@@ -237,12 +262,8 @@
 		8A2AF8BB14B2F65E00AD9089 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8A2AFA2314B3042900AD9089 /* libcocos2d.a */,
-				8A8D977414B73F4300B14762 /* libcocos2d.a */,
-				8A8D972B14B3B4C200B14762 /* libCocosDenshion.a */,
-				8A8D977614B73F4E00B14762 /* libCocosDenshion.a */,
-				8A2AFA2714B3047E00AD9089 /* libz.dylib */,
-				8A8D977C14B7417C00B14762 /* libz.dylib */,
+				8A3D793814B8A55E0071AF42 /* Libraries */,
+				8A8D973B14B3B58E00B14762 /* Other Frameworks */,
 				8A8D978214B746BA00B14762 /* AddressBook.framework */,
 				8AB82C6514B753B900FC71EE /* AddressBook.framework */,
 				8A8D973114B3B51200B14762 /* AudioToolbox.framework */,
@@ -250,6 +271,7 @@
 				8A8D972F14B3B50600B14762 /* AVFoundation.framework */,
 				8A2AF8C014B2F65E00AD9089 /* CoreGraphics.framework */,
 				8A2AF8BE14B2F65E00AD9089 /* Foundation.framework */,
+				8A3D793514B8A3E20071AF42 /* GameKit.framework */,
 				8A8D972D14B3B4ED00B14762 /* OpenAL.framework */,
 				8AB82C7514B75CFC00FC71EE /* OpenAL.framework */,
 				8A8D977A14B7416D00B14762 /* OpenGL.framework */,
@@ -257,8 +279,6 @@
 				8AC85B9814B32024006AFE5E /* QuartzCore.framework */,
 				8A8D977814B7415500B14762 /* QuartzCore.framework */,
 				8A2AF8BC14B2F65E00AD9089 /* UIKit.framework */,
-				8A8D973914B3B58E00B14762 /* Cocoa.framework */,
-				8A8D973B14B3B58E00B14762 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -300,22 +320,38 @@
 				8A8D971414B354BB00B14762 /* dude1.png */,
 				8A8D971514B354BB00B14762 /* dude2.png */,
 				8A8D971614B354BB00B14762 /* eyes.png */,
-				8A2AF8D614B2FEB200AD9089 /* Gubblebum BlacknBlocky.ttf */,
+				8A2AF8D614B2FEB200AD9089 /* Gubblebum-BlacknBlocky.ttf */,
 				8A8D971714B354BB00B14762 /* head.png */,
 				8A8D971814B354BB00B14762 /* heart.png */,
+				8AAAC0C614B8F35C005BC348 /* JoystixMonospace-Regular.ttf */,
 				8A8D971914B354BB00B14762 /* legs.png */,
 				8A8D970614B331C500B14762 /* Localizable.strings */,
 				8A8D972614B3B40400B14762 /* meteor.mp3 */,
+				8AAAC0C714B8F35C005BC348 /* TrailerGoodbye.m4v */,
 				8A8D972714B3B40400B14762 /* zisch.mp3 */,
 			);
 			name = Resources;
 			path = GoodbyeMyLove;
 			sourceTree = "<group>";
 		};
+		8A3D793814B8A55E0071AF42 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				8A2AFA2314B3042900AD9089 /* libcocos2d.a */,
+				8A8D977414B73F4300B14762 /* libcocos2d.a */,
+				8A8D972B14B3B4C200B14762 /* libCocosDenshion.a */,
+				8A8D977614B73F4E00B14762 /* libCocosDenshion.a */,
+				8A2AFA2714B3047E00AD9089 /* libz.dylib */,
+				8A8D977C14B7417C00B14762 /* libz.dylib */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		8A8D973B14B3B58E00B14762 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				8A8D973C14B3B58E00B14762 /* AppKit.framework */,
+				8A8D973914B3B58E00B14762 /* Cocoa.framework */,
 				8A8D973D14B3B58E00B14762 /* CoreData.framework */,
 				8A8D973E14B3B58E00B14762 /* Foundation.framework */,
 			);
@@ -346,12 +382,23 @@
 		8A8D975E14B3B78800B14762 /* Common Code */ = {
 			isa = PBXGroup;
 			children = (
+				8A33574214B87F57002A02FE /* GMLAsteroid.h */,
+				8A33574314B87F57002A02FE /* GMLAsteroid.m */,
+				8A3D793914B8A6D90071AF42 /* GMLBaseLayer.h */,
+				8A3D793A14B8A6D90071AF42 /* GMLBaseLayer.m */,
 				8AC85B9114B31BA3006AFE5E /* GMLGameLayer.h */,
 				8AC85B9214B31BA3006AFE5E /* GMLGameLayer.m */,
+				8A33574514B87F8B002A02FE /* GMLGameOverLayer.h */,
+				8A33574614B87F8B002A02FE /* GMLGameOverLayer.m */,
+				8A3D793C14B8AB390071AF42 /* GMLHelper.h */,
+				8A33573F14B87F31002A02FE /* GMLLovedOne.h */,
+				8A33574014B87F31002A02FE /* GMLLovedOne.m */,
 				8AC85B9514B31BB9006AFE5E /* GMLMenuLayer.h */,
 				8AC85B9614B31BB9006AFE5E /* GMLMenuLayer.m */,
 				8A8D977E14B7463500B14762 /* GMLPeople.h */,
 				8A8D977F14B7463500B14762 /* GMLPeople.m */,
+				8A33574814B88BF4002A02FE /* GMLPersistentStorage.h */,
+				8A33574914B88BF5002A02FE /* GMLPersistentStorage.m */,
 				8A8D972214B35B4200B14762 /* GMLPlayer.h */,
 				8A8D972314B35B4200B14762 /* GMLPlayer.m */,
 				8AB82C6F14B75B5F00FC71EE /* VUAppDelegateBase.h */,
@@ -365,9 +412,9 @@
 			children = (
 				8AB82C6914B754B500FC71EE /* VUAddressBook.h */,
 				8AB82C6A14B754B500FC71EE /* VUAddressBook.m */,
+				8A8D975F14B73C6000B14762 /* VUMacSupport.h */,
 				8AB82C6C14B754CE00FC71EE /* VUPerson.h */,
 				8AB82C6D14B754CE00FC71EE /* VUPerson.m */,
-				8A8D975F14B73C6000B14762 /* VUMacSupport.h */,
 			);
 			name = "Platform Support";
 			sourceTree = "<group>";
@@ -396,6 +443,7 @@
 				8A2AF8B414B2F65E00AD9089 /* Sources */,
 				8A2AF8B514B2F65E00AD9089 /* Frameworks */,
 				8A2AF8B614B2F65E00AD9089 /* Resources */,
+				8A33573D14B7714D002A02FE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -456,7 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A2AF8D514B2FCAB00AD9089 /* backdrop-ipad.png in Resources */,
-				8A2AF8D714B2FEB200AD9089 /* Gubblebum BlacknBlocky.ttf in Resources */,
+				8A2AF8D714B2FEB200AD9089 /* Gubblebum-BlacknBlocky.ttf in Resources */,
 				8AC85B9D14B32329006AFE5E /* asteroid-ipad.png in Resources */,
 				8AC85B9E14B32329006AFE5E /* backdrop-hd.png in Resources */,
 				8AC85B9F14B32329006AFE5E /* backdrop.png in Resources */,
@@ -480,6 +528,8 @@
 				8AB82C9714B7680E00FC71EE /* Icon-Small@2x.png in Resources */,
 				8AB82C9914B7680E00FC71EE /* Icon.png in Resources */,
 				8AB82C9B14B7680E00FC71EE /* Icon@2x.png in Resources */,
+				8AAAC0C814B8F35C005BC348 /* JoystixMonospace-Regular.ttf in Resources */,
+				8AAAC0CA14B8F35C005BC348 /* TrailerGoodbye.m4v in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,7 +545,7 @@
 				8AB82C7C14B7672200FC71EE /* dude1.png in Resources */,
 				8AB82C7D14B7672200FC71EE /* dude2.png in Resources */,
 				8AB82C7E14B7672200FC71EE /* eyes.png in Resources */,
-				8AB82C7F14B7672200FC71EE /* Gubblebum BlacknBlocky.ttf in Resources */,
+				8AB82C7F14B7672200FC71EE /* Gubblebum-BlacknBlocky.ttf in Resources */,
 				8AB82C8014B7672200FC71EE /* head.png in Resources */,
 				8AB82C8114B7672200FC71EE /* heart.png in Resources */,
 				8AB82C8214B7672200FC71EE /* legs.png in Resources */,
@@ -504,10 +554,28 @@
 				8AB82C8514B7672200FC71EE /* zisch.mp3 in Resources */,
 				8A8D975014B3B58F00B14762 /* MainMenu.xib in Resources */,
 				8AB82C8914B767A200FC71EE /* iTunesArtwork in Resources */,
+				8AAAC0C914B8F35C005BC348 /* JoystixMonospace-Regular.ttf in Resources */,
+				8AAAC0CB14B8F35C005BC348 /* TrailerGoodbye.m4v in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8A33573D14B7714D002A02FE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | \\\nxargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | \\\nperl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8A2AF8B414B2F65E00AD9089 /* Sources */ = {
@@ -524,6 +592,11 @@
 				8AB82C6B14B754B500FC71EE /* VUAddressBook.m in Sources */,
 				8AB82C6E14B754CE00FC71EE /* VUPerson.m in Sources */,
 				8AB82C7114B75B5F00FC71EE /* VUAppDelegateBase.m in Sources */,
+				8A33574114B87F31002A02FE /* GMLLovedOne.m in Sources */,
+				8A33574414B87F57002A02FE /* GMLAsteroid.m in Sources */,
+				8A33574714B87F8B002A02FE /* GMLGameOverLayer.m in Sources */,
+				8A33574A14B88BF5002A02FE /* GMLPersistentStorage.m in Sources */,
+				8A3D793B14B8A6D90071AF42 /* GMLBaseLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +652,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -599,6 +673,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

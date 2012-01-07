@@ -6,16 +6,25 @@
 //  Copyright (c) 2012 Crocodil.us. All rights reserved.
 //
 
+#import <notify.h>
+
 #import "cocos2d.h"
 #import "SimpleAudioEngine.h"
 
 #import "GMLMenuLayer.h"
+#import "GMLPersistentStorage.h"
 #import "VUAppDelegateBase.h"
 
 @implementation VUAppDelegateBase
 
--(void)applicationDidFinishLaunching
+@synthesize storage;
+
+#pragma mark -
+
+-(CCScene*)applicationDidFinishLaunching
 {	
+    NSLog(@"Running app %@", [NSBundle mainBundle].bundleIdentifier);
+    
 	CCDirector *director = [CCDirector sharedDirector];
 	
 	[director setAnimationInterval:1.0/60];
@@ -23,9 +32,16 @@
 	
 	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
     
-	[[CCDirector sharedDirector] runWithScene: [GMLMenuLayer scene]];
+    CCScene* scene = [GMLMenuLayer scene];
+	[[CCDirector sharedDirector] runWithScene:scene];
     
-    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"443238_Sorry.MP3"];
+    // FIXME: Music is annoying these days :)
+    //[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"443238_Sorry.MP3"];
+    
+    self.storage = [[GMLPersistentStorage alloc] init];
+    [self.storage authenticateLocalUser];
+    
+    return scene;
 }
 
 -(void)applicationWillResignActive

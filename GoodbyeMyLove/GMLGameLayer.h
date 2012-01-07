@@ -6,12 +6,7 @@
 //  Copyright (c) 2012 Crocodil.us. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "GMLBaseLayer.h"
 
-#import "cocos2d.h"
-
-@interface GMLGameLayer : CCLayer
-
-+(CCScene*)scene;
-
+@interface GMLGameLayer : GMLBaseLayer
 @end

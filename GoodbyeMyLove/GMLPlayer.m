@@ -24,6 +24,12 @@
 @synthesize score;
 @synthesize touching;
 
+#pragma mark -
+
++(id)player {
+    return [self spriteWithFile:@"dude1.png"];
+}
+
 -(CGRect)rectInPixels {
     CGSize size = [self contentSizeInPixels];
     return CGRectMake(-size.width / 2, -size.height / 2, size.width, size.height);
@@ -61,11 +67,10 @@
     self.touching = NO;
 }
 
-// FIXME: Flicker, wrong position
 -(void)ccTouchMoved:(UITouch*)touch withEvent:(UIEvent*)event {
     if (!self.touching) return;
     CGPoint touchPoint = [self convertTouchToNodeSpaceAR:touch];
-    NSLog(@"Moved to: %@", NSStringFromCGPoint(touchPoint));
+    touchPoint = [self convertToWorldSpaceAR:touchPoint];
     self.position = touchPoint;
 }
 

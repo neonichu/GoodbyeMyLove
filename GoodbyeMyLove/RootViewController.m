@@ -12,8 +12,7 @@
 
 @implementation RootViewController
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     if (interfaceOrientation == UIInterfaceOrientationPortrait) {
         [[CCDirector sharedDirector] setDeviceOrientation:kCCDeviceOrientationPortrait];
     } else if (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {

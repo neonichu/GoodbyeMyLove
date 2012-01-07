@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+@class CCScene;
+@class GMLPersistentStorage;
+
 #if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
 
@@ -16,9 +19,11 @@
 @interface VUAppDelegateBase : NSObject
 #endif
 
+@property (nonatomic, retain) GMLPersistentStorage* storage;
+
 -(void)applicationDidBecomeActive;
 -(void)applicationDidEnterBackground;
--(void)applicationDidFinishLaunching;
+-(CCScene*)applicationDidFinishLaunching;
 -(void)applicationDidReceiveMemoryWarning;
 -(void)applicationSignificantTimeChange;
 -(void)applicationWillEnterForeground;
