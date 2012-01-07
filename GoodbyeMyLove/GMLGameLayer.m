@@ -43,8 +43,14 @@
     // TODO: Init bubbles for the first n seconds
     
     if (timeElapsed > 2.0) {
-        [[CCDirector sharedDirector] replaceScene:[GMLGameOverLayer scene]];
+        [self gameOverHappened];
     }
+}
+
+-(void)gameOverHappened {
+    CCScene* gameOverScene = [GMLGameOverLayer scene];
+    ((GMLGameOverLayer*)[gameOverScene.children objectAtIndex:0]).score = [NSString stringWithFormat:@"%d", self.player.score];
+    [[CCDirector sharedDirector] replaceScene:gameOverScene];
 }
 
 -(void)initLevel {

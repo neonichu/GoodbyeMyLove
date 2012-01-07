@@ -7,6 +7,7 @@
 //
 
 #import "GMLBaseLayer.h"
+#import "GMLHelper.h"
 
-@interface GMLGameLayer : GMLBaseLayer
+@interface GMLGameLayer : GMLBaseLayer <GMLGameOverDelegate>
 @end
