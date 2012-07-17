@@ -19,6 +19,8 @@
 @class ABPerson;
 
 #define kVUFirstNameProperty                kABFirstNameProperty
+#define UIColor                             NSColor
+#define UIImage                             NSImage
 #define UITextAlignmentCenter               NSLineBreakByWordWrapping
 
 typedef ABAddressBook VUAddressBook;

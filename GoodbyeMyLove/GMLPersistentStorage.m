@@ -81,6 +81,8 @@
 #pragma mark -
 #pragma mark GameCenter handling methods
 
+#if TARGET_OS_IPHONE
+
 -(void)authenticateLocalUser {
 	if([GKLocalPlayer localPlayer].authenticated == NO) {
 		[[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:^(NSError* error) {
@@ -116,5 +118,15 @@
          [self callDelegateOnMainThread:@selector(achievementSubmitted:error:) withArg:achievement error:error];
      }];
 }
+
+#else
+
+-(void)authenticateLocalUser {
+}
+
+-(void)submitAchievement:(NSString*)identifier percentComplete:(double)percentComplete {
+}
+
+#endif
 
 @end

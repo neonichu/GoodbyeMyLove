@@ -9,6 +9,7 @@
 #import "GMLGameLayer.h"
 #import "GMLGameOverLayer.h"
 #import "GMLHelper.h"
+#import "VUMacSupport.h"
 
 @interface GMLGameOverLayer ()
 
@@ -30,6 +31,7 @@
 #pragma mark -
 
 +(UIImage *)imageWithColor:(UIColor*)color size:(CGSize)size {
+#if TARGET_OS_IPHONE
     CGRect rect = CGRectMake(0.0f, 0.0f, size.width, size.height);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -40,6 +42,9 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
+#else
+    return nil;
+#endif
 }
 
 #if TARGET_OS_IPHONE
@@ -77,10 +82,12 @@
         CCLabelTTF* last = nil;
         CGSize size = self.contentSize;
         
+#if TARGET_OS_IPHONE
         UIImage* coloredImage = [[self class] imageWithColor:GMLGameOverColor size:self.contentSize];
         CCSprite* bg = [CCSprite spriteWithCGImage:coloredImage.CGImage key:@"GameOverBackground"];
         bg.position = ccp(size.width / 2, size.height / 2);
         [self addChild:bg z:0];
+#endif
         
         last = [self addText:NSLocalizedString(@"GAME-OVER", @"Game Over headline") color:ccWHITE fontSize:60 
                     position:ccp(size.width / 2, size.height - 100) dimensions:CGSizeMake(size.width, 150)];

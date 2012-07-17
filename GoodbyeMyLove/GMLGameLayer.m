@@ -50,7 +50,7 @@
 
 -(void)gameOverHappened {
     CCScene* gameOverScene = [GMLGameOverLayer scene];
-    ((GMLGameOverLayer*)[gameOverScene.children objectAtIndex:0]).score = [NSString stringWithFormat:@"%d", self.player.score];
+    ((GMLGameOverLayer*)[gameOverScene.children objectAtIndex:0]).score = [NSString stringWithFormat:@"%ld", (long)self.player.score];
     [[CCDirector sharedDirector] replaceScene:gameOverScene];
 }
 

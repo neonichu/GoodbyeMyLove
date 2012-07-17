@@ -13,10 +13,16 @@
 
 #import "GMLBaseLayer.h"
 
+#if TARGET_OS_IPHONE
+
 @interface GMLMenuLayer : GMLBaseLayer <GKAchievementViewControllerDelegate>
 
-#if TARGET_OS_IPHONE
 @property (nonatomic, assign) UIViewController* rootVC;
+
+#else
+
+@interface GMLMenuLayer : GMLBaseLayer
+
 #endif
 
 @end

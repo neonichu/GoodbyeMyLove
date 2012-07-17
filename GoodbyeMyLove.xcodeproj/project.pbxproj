@@ -22,6 +22,11 @@
 		8A33574414B87F57002A02FE /* GMLAsteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A33574314B87F57002A02FE /* GMLAsteroid.m */; };
 		8A33574714B87F8B002A02FE /* GMLGameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A33574614B87F8B002A02FE /* GMLGameOverLayer.m */; };
 		8A33574A14B88BF5002A02FE /* GMLPersistentStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A33574914B88BF5002A02FE /* GMLPersistentStorage.m */; };
+		8A391D8A15B61CCE00839F04 /* GMLAsteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A33574314B87F57002A02FE /* GMLAsteroid.m */; };
+		8A391D8B15B61CCE00839F04 /* GMLBaseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D793A14B8A6D90071AF42 /* GMLBaseLayer.m */; };
+		8A391D8C15B61CCE00839F04 /* GMLGameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A33574614B87F8B002A02FE /* GMLGameOverLayer.m */; };
+		8A391D8D15B61CCE00839F04 /* GMLLovedOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A33574014B87F31002A02FE /* GMLLovedOne.m */; };
+		8A391D8E15B61CCE00839F04 /* GMLPersistentStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A33574914B88BF5002A02FE /* GMLPersistentStorage.m */; };
 		8A3D793614B8A3E20071AF42 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3D793514B8A3E20071AF42 /* GameKit.framework */; };
 		8A3D793B14B8A6D90071AF42 /* GMLBaseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D793A14B8A6D90071AF42 /* GMLBaseLayer.m */; };
 		8A8D970814B331C500B14762 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D970614B331C500B14762 /* Localizable.strings */; };
@@ -604,6 +609,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A391D8A15B61CCE00839F04 /* GMLAsteroid.m in Sources */,
+				8A391D8B15B61CCE00839F04 /* GMLBaseLayer.m in Sources */,
+				8A391D8C15B61CCE00839F04 /* GMLGameOverLayer.m in Sources */,
+				8A391D8D15B61CCE00839F04 /* GMLLovedOne.m in Sources */,
+				8A391D8E15B61CCE00839F04 /* GMLPersistentStorage.m in Sources */,
 				8A8D975514B3B6D300B14762 /* GMLGameLayer.m in Sources */,
 				8A8D975714B3B6D300B14762 /* GMLMenuLayer.m in Sources */,
 				8A8D975914B3B6D300B14762 /* GMLPlayer.m in Sources */,

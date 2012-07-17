@@ -25,8 +25,8 @@
 
 +(id)lovedOneWithName:(NSString*)name fromAddressBook:(BOOL)fromAddressBook {
     id result = [self lovedOne];
-    [result setFromAddressBook:fromAddressBook];
-    [result setName:name];
+    [(GMLLovedOne*)result setFromAddressBook:fromAddressBook];
+    [(GMLLovedOne*)result setName:name];
     return result;
 }
 

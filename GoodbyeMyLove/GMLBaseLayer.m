@@ -9,6 +9,7 @@
 #import "cocos2d.h"
 
 #import "GMLBaseLayer.h"
+#import "VUMacSupport.h"
 
 @implementation GMLBaseLayer
 
