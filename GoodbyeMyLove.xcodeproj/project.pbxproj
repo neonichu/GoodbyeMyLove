@@ -27,6 +27,7 @@
 		8A391D8C15B61CCE00839F04 /* GMLGameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A33574614B87F8B002A02FE /* GMLGameOverLayer.m */; };
 		8A391D8D15B61CCE00839F04 /* GMLLovedOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A33574014B87F31002A02FE /* GMLLovedOne.m */; };
 		8A391D8E15B61CCE00839F04 /* GMLPersistentStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A33574914B88BF5002A02FE /* GMLPersistentStorage.m */; };
+		8A391EE215BB68A800839F04 /* UIScreen+VUAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A391EE115BB68A800839F04 /* UIScreen+VUAdditions.m */; };
 		8A3D793614B8A3E20071AF42 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3D793514B8A3E20071AF42 /* GameKit.framework */; };
 		8A3D793B14B8A6D90071AF42 /* GMLBaseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D793A14B8A6D90071AF42 /* GMLBaseLayer.m */; };
 		8A8D970814B331C500B14762 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D970614B331C500B14762 /* Localizable.strings */; };
@@ -129,6 +130,8 @@
 		8A33574614B87F8B002A02FE /* GMLGameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMLGameOverLayer.m; path = GoodbyeMyLove/GMLGameOverLayer.m; sourceTree = "<group>"; };
 		8A33574814B88BF4002A02FE /* GMLPersistentStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLPersistentStorage.h; path = GoodbyeMyLove/GMLPersistentStorage.h; sourceTree = "<group>"; };
 		8A33574914B88BF5002A02FE /* GMLPersistentStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMLPersistentStorage.m; path = GoodbyeMyLove/GMLPersistentStorage.m; sourceTree = "<group>"; };
+		8A391EE015BB68A800839F04 /* UIScreen+VUAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+VUAdditions.h"; sourceTree = "<group>"; };
+		8A391EE115BB68A800839F04 /* UIScreen+VUAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+VUAdditions.m"; sourceTree = "<group>"; };
 		8A3D793514B8A3E20071AF42 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		8A3D793914B8A6D90071AF42 /* GMLBaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLBaseLayer.h; path = GoodbyeMyLove/GMLBaseLayer.h; sourceTree = "<group>"; };
 		8A3D793A14B8A6D90071AF42 /* GMLBaseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMLBaseLayer.m; path = GoodbyeMyLove/GMLBaseLayer.m; sourceTree = "<group>"; };
@@ -293,6 +296,8 @@
 			children = (
 				8A2AF9E414B3003600AD9089 /* RootViewController.h */,
 				8A2AF9E514B3003600AD9089 /* RootViewController.m */,
+				8A391EE015BB68A800839F04 /* UIScreen+VUAdditions.h */,
+				8A391EE115BB68A800839F04 /* UIScreen+VUAdditions.m */,
 				8A2AF8CB14B2F65E00AD9089 /* VUAppDelegate.h */,
 				8A2AF8CC14B2F65E00AD9089 /* VUAppDelegate.m */,
 				8A2AF8C314B2F65E00AD9089 /* Supporting Files */,
@@ -602,6 +607,7 @@
 				8A33574714B87F8B002A02FE /* GMLGameOverLayer.m in Sources */,
 				8A33574A14B88BF5002A02FE /* GMLPersistentStorage.m in Sources */,
 				8A3D793B14B8A6D90071AF42 /* GMLBaseLayer.m in Sources */,
+				8A391EE215BB68A800839F04 /* UIScreen+VUAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,10 @@
 #import "GMLHelper.h"
 #import "VUMacSupport.h"
 
+#if TARGET_OS_IPHONE
+#import "UIScreen+VUAdditions.h"
+#endif
+
 @interface GMLGameOverLayer ()
 
 @property (nonatomic, retain) CCLabelTTF* instructionsLabel;
@@ -83,7 +87,7 @@
         CGSize size = self.contentSize;
         
 #if TARGET_OS_IPHONE
-        UIImage* coloredImage = [[self class] imageWithColor:GMLGameOverColor size:self.contentSize];
+        UIImage* coloredImage = [[self class] imageWithColor:GMLGameOverColor size:[UIScreen absoluteSizeForSize:size]];
         CCSprite* bg = [CCSprite spriteWithCGImage:coloredImage.CGImage key:@"GameOverBackground"];
         bg.position = ccp(size.width / 2, size.height / 2);
         [self addChild:bg z:0];
