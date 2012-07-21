@@ -35,8 +35,7 @@
     CCScene* scene = [GMLMenuLayer scene];
 	[[CCDirector sharedDirector] runWithScene:scene];
     
-    // FIXME: Music is annoying these days :)
-    //[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"443238_Sorry.MP3"];
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"443238_Sorry.MP3"];
     
     self.storage = [[GMLPersistentStorage alloc] init];
     [self.storage authenticateLocalUser];
