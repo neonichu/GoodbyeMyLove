@@ -81,7 +81,7 @@
 #pragma mark -
 #pragma mark GameCenter handling methods
 
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE && GAMECENTER_ENABLED
 
 -(void)authenticateLocalUser {
 	if([GKLocalPlayer localPlayer].authenticated == NO) {
