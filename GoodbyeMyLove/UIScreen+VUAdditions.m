@@ -10,4 +10,9 @@
 
 @implementation UIScreen (VUAdditions)
 
++(CGSize)absoluteSizeForSize:(CGSize)size {
+    CGFloat scale = [[self mainScreen] scale];
+    return CGSizeMake(size.width * scale, size.height * scale);
+}
+
 @end

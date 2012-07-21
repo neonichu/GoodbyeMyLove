@@ -10,4 +10,6 @@
 
 @interface UIScreen (VUAdditions)
 
++(CGSize)absoluteSizeForSize:(CGSize)size;
+
 @end
