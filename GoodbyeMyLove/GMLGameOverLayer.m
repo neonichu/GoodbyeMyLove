@@ -79,7 +79,7 @@
     self = [super init];
     if (self) {
         self.fontName = @"JoystixMonospace-Regular";
-        self.score = @"232342";
+        self.score = @"";
         
         [self removeAllChildrenWithCleanup:YES];
         
