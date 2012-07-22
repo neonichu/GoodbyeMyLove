@@ -38,6 +38,8 @@
 		8A391EEC15BB6B1A00839F04 /* backdrop-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AF8D414B2FCAB00AD9089 /* backdrop-ipad.png */; };
 		8A3D793614B8A3E20071AF42 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3D793514B8A3E20071AF42 /* GameKit.framework */; };
 		8A3D793B14B8A6D90071AF42 /* GMLBaseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D793A14B8A6D90071AF42 /* GMLBaseLayer.m */; };
+		8A70960115BC6B3D00914D13 /* CCSprite+Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A70960015BC6B3D00914D13 /* CCSprite+Collision.m */; };
+		8A70960215BC6B3D00914D13 /* CCSprite+Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A70960015BC6B3D00914D13 /* CCSprite+Collision.m */; };
 		8A8D970814B331C500B14762 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D970614B331C500B14762 /* Localizable.strings */; };
 		8A8D970C14B335DB00B14762 /* asteroid-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D970A14B335DB00B14762 /* asteroid-hd.png */; };
 		8A8D970D14B335DB00B14762 /* asteroid.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A8D970B14B335DB00B14762 /* asteroid.png */; };
@@ -146,6 +148,8 @@
 		8A3D793914B8A6D90071AF42 /* GMLBaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLBaseLayer.h; path = GoodbyeMyLove/GMLBaseLayer.h; sourceTree = "<group>"; };
 		8A3D793A14B8A6D90071AF42 /* GMLBaseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMLBaseLayer.m; path = GoodbyeMyLove/GMLBaseLayer.m; sourceTree = "<group>"; };
 		8A3D793C14B8AB390071AF42 /* GMLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLHelper.h; path = GoodbyeMyLove/GMLHelper.h; sourceTree = "<group>"; };
+		8A7095FF15BC6B3D00914D13 /* CCSprite+Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCSprite+Collision.h"; sourceTree = "<group>"; };
+		8A70960015BC6B3D00914D13 /* CCSprite+Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCSprite+Collision.m"; sourceTree = "<group>"; };
 		8A8D970714B331C500B14762 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8A8D970A14B335DB00B14762 /* asteroid-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "asteroid-hd.png"; path = "Assets/asteroid-hd.png"; sourceTree = SOURCE_ROOT; };
 		8A8D970B14B335DB00B14762 /* asteroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = asteroid.png; path = Assets/asteroid.png; sourceTree = SOURCE_ROOT; };
@@ -404,6 +408,8 @@
 		8A8D975E14B3B78800B14762 /* Common Code */ = {
 			isa = PBXGroup;
 			children = (
+				8A7095FF15BC6B3D00914D13 /* CCSprite+Collision.h */,
+				8A70960015BC6B3D00914D13 /* CCSprite+Collision.m */,
 				8A33574214B87F57002A02FE /* GMLAsteroid.h */,
 				8A33574314B87F57002A02FE /* GMLAsteroid.m */,
 				8A3D793914B8A6D90071AF42 /* GMLBaseLayer.h */,
@@ -628,6 +634,7 @@
 				8A33574A14B88BF5002A02FE /* GMLPersistentStorage.m in Sources */,
 				8A3D793B14B8A6D90071AF42 /* GMLBaseLayer.m in Sources */,
 				8A391EE215BB68A800839F04 /* UIScreen+VUAdditions.m in Sources */,
+				8A70960115BC6B3D00914D13 /* CCSprite+Collision.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +654,7 @@
 				8A8D974D14B3B58E00B14762 /* VUAppDelegate.m in Sources */,
 				8A8D978114B7463500B14762 /* GMLPeople.m in Sources */,
 				8AB82C7214B75B5F00FC71EE /* VUAppDelegateBase.m in Sources */,
+				8A70960215BC6B3D00914D13 /* CCSprite+Collision.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
