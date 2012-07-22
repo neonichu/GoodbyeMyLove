@@ -16,9 +16,12 @@
 @property (nonatomic, retain) NSString* name;
 @property (nonatomic, assign) NSUInteger points;
 
+@property (nonatomic, assign) BOOL alive;
 @property (nonatomic, readonly) BOOL isLovedOne;
 
 +(id)lovedOne;
 +(id)lovedOneWithName:(NSString*)name fromAddressBook:(BOOL)fromAddressBook;
+
+-(void)gameLoop:(ccTime)time;
 
 @end
