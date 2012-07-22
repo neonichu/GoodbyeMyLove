@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Crocodil.us. All rights reserved.
 //
 
+#import "CCSprite+Collision.h"
 #import "GMLAsteroid.h"
 #import "GMLGameLayer.h"
 #import "GMLGameOverLayer.h"
@@ -38,12 +39,24 @@
     
     [self.asteroid gameLoop:time];
     
+    for (GMLLovedOne* npc in self.npcs) {
+        [npc gameLoop:time];
+        
+        if ([self.asteroid collidesWith:npc]) {
+            [npc removeFromParentAndCleanup:YES];
+        }
+        
+        if ([self.player collidesWith:npc]) {
+            self.player.score += npc.points;
+            npc.points = 0;
+            // TODO: Goodbye animation
+        }
+    }
+    
     // TODO: When level is done increase number of NPCs, asteroid speed, etc.
-    // TODO: Move loved ones
-    // TODO: Collision detection with loved ones
     // TODO: Init bubbles for the first n seconds
     
-    if (timeElapsed > 2.0) {
+    if ([self.asteroid collidesWith:self.player]) {
         [self gameOverHappened];
     }
 }
