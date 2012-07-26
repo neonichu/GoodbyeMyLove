@@ -1,0 +1,4144 @@
+diff --git a/CocosDenshion/CocosDenshion/CocosDenshion.m b/CocosDenshion/CocosDenshion/CocosDenshion.m
+index 6956c3a..3e85b23 100644
+--- a/CocosDenshion/CocosDenshion/CocosDenshion.m
++++ b/CocosDenshion/CocosDenshion/CocosDenshion.m
+@@ -1342,7 +1342,7 @@ static BOOL _mixerRateSet = NO;
+ -(id) init:(int) theSoundId filePath:(const NSString *) theFilePath {
+ 	if ((self = [super init])) {
+ 		soundId = theSoundId;
+-		filePath = [theFilePath copy];//TODO: is retain necessary or does copy set retain count
++		filePath = [theFilePath copy];// is retain necessary or does copy set retain count
+ 		[filePath retain];
+ 	} 
+ 	return self;
+diff --git a/CocosDenshion/CocosDenshionExtras/CDXMacOSXSupport.h b/CocosDenshion/CocosDenshionExtras/CDXMacOSXSupport.h
+index c1a99f0..52e0bdb 100644
+--- a/CocosDenshion/CocosDenshionExtras/CDXMacOSXSupport.h
++++ b/CocosDenshion/CocosDenshionExtras/CDXMacOSXSupport.h
+@@ -189,7 +189,7 @@ enum {
+ 	id<AVAudioSessionDelegate> delegate;
+ 
+ @private
+-    __strong void *_impl;
++    void *_impl;
+ }
+ 
+ /* returns singleton instance */
+diff --git a/CocosDenshion/CocosDenshionExtras/CDXMacOSXSupport.m b/CocosDenshion/CocosDenshionExtras/CDXMacOSXSupport.m
+index 8384de7..d4a949a 100644
+--- a/CocosDenshion/CocosDenshionExtras/CDXMacOSXSupport.m
++++ b/CocosDenshion/CocosDenshionExtras/CDXMacOSXSupport.m
+@@ -37,7 +37,7 @@ NSString *const AVAudioSessionCategoryPlayAndRecord = @"AVAudioSessionCategoryPl
+ NSString *const AVAudioSessionCategoryAudioProcessing = @"AVAudioSessionCategoryAudioProcessing";
+ 
+ OSStatus AudioSessionGetProperty(UInt32 inID, UInt32 *ioDataSize, void *outData) {
+-	//TODO: set outData appropriately
++	// set outData appropriately
+ 	return 0;
+ }    
+ 
+diff --git a/CocosDenshion/TestsAndDemos/TomTheTurret/Classes/ActionScene.m b/CocosDenshion/TestsAndDemos/TomTheTurret/Classes/ActionScene.m
+index fe9e937..1e7d565 100644
+--- a/CocosDenshion/TestsAndDemos/TomTheTurret/Classes/ActionScene.m
++++ b/CocosDenshion/TestsAndDemos/TomTheTurret/Classes/ActionScene.m
+@@ -337,7 +337,7 @@ SimpleAudioEngine *soundEngine;
+ 	if (sprite.tag == 1) { // monster
+ 		[_monsters removeObject:sprite];
+         
+-        // TODO: Explosion
++        // Explosion
+         self.inLevel = FALSE;         
+         ActionLevel *curLevel = (ActionLevel *) [GameState sharedState].curLevel;        
+         if (!curLevel.isFinalLevel || self.monsterHit) {
+diff --git a/CocosDenshion/TestsAndDemos/TomTheTurret/Classes/GameSoundManager.m b/CocosDenshion/TestsAndDemos/TomTheTurret/Classes/GameSoundManager.m
+index 08181cb..f347d99 100644
+--- a/CocosDenshion/TestsAndDemos/TomTheTurret/Classes/GameSoundManager.m
++++ b/CocosDenshion/TestsAndDemos/TomTheTurret/Classes/GameSoundManager.m
+@@ -8,7 +8,7 @@
+ 
+ @implementation GameSoundManager
+ 
+-//TODO: modify this method to load the sounds for your game that you want preloaded at start up.
++// modify this method to load the sounds for your game that you want preloaded at start up.
+ //If you don't preload your sounds there will be a delay before they are played the first time while the sound data
+ //is loaded to the playback buffer
+ -(void) preload {
+@@ -23,7 +23,7 @@
+ 	
+ }	
+ 
+-//TODO: modify these parameters to your own taste, e.g you may want a longer fade out or a different type of curve
++// modify these parameters to your own taste, e.g you may want a longer fade out or a different type of curve
+ -(void) fadeOutMusic {
+ 	[CDXPropertyModifierAction fadeBackgroundMusic:2.0f finalVolume:0.0f curveType:kIT_SCurve shouldStop:YES];
+ }	
+diff --git a/cocos2d-ios.xcodeproj/project.pbxproj b/cocos2d-ios.xcodeproj/project.pbxproj
+index 97f8906..6df0795 100644
+Binary files a/cocos2d-ios.xcodeproj/project.pbxproj and b/cocos2d-ios.xcodeproj/project.pbxproj differ
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ActionManagerTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ActionManagerTest.xcscheme
+index 0a7a2cf..25f6355 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ActionManagerTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ActionManagerTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ActionsTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ActionsTest.xcscheme
+index 9bf828a..b38f5d2 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ActionsTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ActionsTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ActionsWithBlocksSample.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ActionsWithBlocksSample.xcscheme
+index 1faa4ad..4c81840 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ActionsWithBlocksSample.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ActionsWithBlocksSample.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/AttachTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/AttachTest.xcscheme
+index 5c233bd..ce2ceb1 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/AttachTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/AttachTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Box2dAccelTouchTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Box2dAccelTouchTest.xcscheme
+index e1578f8..c8395a0 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Box2dAccelTouchTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Box2dAccelTouchTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Box2dTestBed.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Box2dTestBed.xcscheme
+index ff8a97e..f4836d7 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Box2dTestBed.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Box2dTestBed.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug1159.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug1159.xcscheme
+index 79ea6db..6087bfd 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug1159.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug1159.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -13,7 +14,7 @@
+             buildForAnalyzing = "YES">
+             <BuildableReference
+                BuildableIdentifier = "primary"
+-               BlueprintIdentifier = "E0EA5673134B9CA800F212C8"
++               BlueprintIdentifier = "E0BD924C134B744600E71F1D"
+                BuildableName = "Bug1159.app"
+                BlueprintName = "Bug1159"
+                ReferencedContainer = "container:cocos2d-ios.xcodeproj">
+@@ -30,18 +31,21 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+-            BlueprintIdentifier = "E0EA5673134B9CA800F212C8"
++            BlueprintIdentifier = "E0BD924C134B744600E71F1D"
+             BuildableName = "Bug1159.app"
+             BlueprintName = "Bug1159"
+             ReferencedContainer = "container:cocos2d-ios.xcodeproj">
+@@ -56,11 +60,12 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+-            BlueprintIdentifier = "E0EA5673134B9CA800F212C8"
++            BlueprintIdentifier = "E0BD924C134B744600E71F1D"
+             BuildableName = "Bug1159.app"
+             BlueprintName = "Bug1159"
+             ReferencedContainer = "container:cocos2d-ios.xcodeproj">
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug1174.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug1174.xcscheme
+index 7c30a65..e3f8e7e 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug1174.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug1174.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug350.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug350.xcscheme
+index 204ad82..1aaa9fd 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug350.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug350.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug422.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug422.xcscheme
+index 47bbad6..87f2bc7 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug422.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug422.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug458.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug458.xcscheme
+index d0d1faa..4bf8207 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug458.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug458.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug624.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug624.xcscheme
+index 29dc09c..97d4478 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug624.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug624.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug886.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug886.xcscheme
+index 6dacd90..0901043 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug886.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug886.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug899.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug899.xcscheme
+index ea09c93..820e6e7 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug899.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug899.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug914.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug914.xcscheme
+index 109d8c4..f9feefd 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug914.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Bug914.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Chipmunk.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Chipmunk.xcscheme
+index 04c0535..83b74f4 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Chipmunk.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Chipmunk.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -47,7 +51,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ChipmunkAccelTouchTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ChipmunkAccelTouchTest.xcscheme
+index 5f713f8..0eeb28b 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ChipmunkAccelTouchTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ChipmunkAccelTouchTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ChipmunkTestBed.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ChipmunkTestBed.xcscheme
+index df32a39..615f80a 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ChipmunkTestBed.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ChipmunkTestBed.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ClickAndMoveTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ClickAndMoveTest.xcscheme
+index fdbfec3..f72e8a0 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ClickAndMoveTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ClickAndMoveTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - Drum Pad.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - Drum Pad.xcscheme
+index 06b9898..3a1554e 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - Drum Pad.xcscheme	
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - Drum Pad.xcscheme	
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - Fade To Grey.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - Fade To Grey.xcscheme
+index 764aa23..26ba1e3 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - Fade To Grey.xcscheme	
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - Fade To Grey.xcscheme	
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - FancyRat Metering.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - FancyRat Metering.xcscheme
+index 1a54844..b6e14e0 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - FancyRat Metering.xcscheme	
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - FancyRat Metering.xcscheme	
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - Tom The Turret.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - Tom The Turret.xcscheme
+index b6d67c7..ad15095 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - Tom The Turret.xcscheme	
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion - Tom The Turret.xcscheme	
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion.xcscheme
+index bef2dd3..b2857e1 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/CocosDenshion.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -47,7 +51,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/DirectorTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/DirectorTest.xcscheme
+index 1cf3e73..7777d08 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/DirectorTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/DirectorTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EAGLViewTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EAGLViewTest.xcscheme
+index d9b2945..44b9bb6 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EAGLViewTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EAGLViewTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EaseActionsTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EaseActionsTest.xcscheme
+index 824bcc2..258d2a0 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EaseActionsTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EaseActionsTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EffectsAdvancedTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EffectsAdvancedTest.xcscheme
+index 37bbe5c..8289890 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EffectsAdvancedTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EffectsAdvancedTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EffectsTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EffectsTest.xcscheme
+index 0f6f703..22a8c67 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EffectsTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/EffectsTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/FontLabel.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/FontLabel.xcscheme
+index 65a141b..7f442fb 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/FontLabel.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/FontLabel.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -47,7 +51,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/FontTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/FontTest.xcscheme
+index 5d5fab7..3875637 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/FontTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/FontTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HelloActionsSample.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HelloActionsSample.xcscheme
+index cf3e76e..336a06f 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HelloActionsSample.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HelloActionsSample.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HelloEventsSample.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HelloEventsSample.xcscheme
+index c333f74..58a9d75 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HelloEventsSample.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HelloEventsSample.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HelloWorldSample.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HelloWorldSample.xcscheme
+index cebbae2..1265645 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HelloWorldSample.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HelloWorldSample.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HiResTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HiResTest.xcscheme
+index 8835e9a..06b83be 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HiResTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/HiResTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/IntervalTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/IntervalTest.xcscheme
+index 71c59fb..27b6a4d 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/IntervalTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/IntervalTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/LabelTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/LabelTest.xcscheme
+index 5b08abf..5b109e9 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/LabelTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/LabelTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/LayerTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/LayerTest.xcscheme
+index 9d24087..1d496ae 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/LayerTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/LayerTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/MenuTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/MenuTest.xcscheme
+index 0b8f11d..234d086 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/MenuTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/MenuTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/MenuTestWithBlocks.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/MenuTestWithBlocks.xcscheme
+index 17aadd4..de3cc6d 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/MenuTestWithBlocks.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/MenuTestWithBlocks.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/MotionStreakTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/MotionStreakTest.xcscheme
+index 5fbb2d1..bb707c1 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/MotionStreakTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/MotionStreakTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/PASoundEngineTest (experimental).xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/PASoundEngineTest (experimental).xcscheme
+index 83d9a95..dc718b3 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/PASoundEngineTest (experimental).xcscheme	
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/PASoundEngineTest (experimental).xcscheme	
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ParallaxTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ParallaxTest.xcscheme
+index 9d69813..ccf20d5 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ParallaxTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ParallaxTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ParticleBatchTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ParticleBatchTest.xcscheme
+index 99dec21..0bf4053 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ParticleBatchTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ParticleBatchTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -44,6 +45,7 @@
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
++      ignoresPersistentStateOnLaunch = "NO"
+       debugDocumentVersioning = "YES"
+       enablesOpenGLESFrameCapture = "YES"
+       allowLocationSimulation = "YES">
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ParticleTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ParticleTest.xcscheme
+index a9e2f31..69d4b01 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ParticleTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ParticleTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ProgressActionsTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ProgressActionsTest.xcscheme
+index 6961a17..83a8e9e 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ProgressActionsTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ProgressActionsTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/RenderTextureTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/RenderTextureTest.xcscheme
+index 84b6c40..6149f0c 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/RenderTextureTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/RenderTextureTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/RotateWorldTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/RotateWorldTest.xcscheme
+index 897993b..0b536d9 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/RotateWorldTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/RotateWorldTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/SceneTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/SceneTest.xcscheme
+index c9a1317..17e687f 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/SceneTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/SceneTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/SchedulerTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/SchedulerTest.xcscheme
+index c773375..ff9b0b6 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/SchedulerTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/SchedulerTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ShaderTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ShaderTest.xcscheme
+index 89e29b1..7769f84 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ShaderTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ShaderTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/SpriteTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/SpriteTest.xcscheme
+index 36f98fb..92eb022 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/SpriteTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/SpriteTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -44,6 +45,7 @@
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
++      ignoresPersistentStateOnLaunch = "NO"
+       debugDocumentVersioning = "YES"
+       enablesOpenGLESFrameCapture = "YES"
+       allowLocationSimulation = "YES">
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TestCocos2dExtension.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TestCocos2dExtension.xcscheme
+index 2e1cff7..86261ed 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TestCocos2dExtension.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TestCocos2dExtension.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Texture2dTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Texture2dTest.xcscheme
+index c4c4b8b..59d730d 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Texture2dTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/Texture2dTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TileMapTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TileMapTest.xcscheme
+index bcafb36..83504b0 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TileMapTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TileMapTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TouchJSON.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TouchJSON.xcscheme
+index fc135ff..0fe1e2d 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TouchJSON.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TouchJSON.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -47,7 +51,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TouchesTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TouchesTest.xcscheme
+index ad81ad0..a7f9d64 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TouchesTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TouchesTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TransitionsTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TransitionsTest.xcscheme
+index d5b0eb5..22e1116 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TransitionsTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/TransitionsTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ZwoptexTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ZwoptexTest.xcscheme
+index adfa94c..0df5a57 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ZwoptexTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/ZwoptexTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/box2d.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/box2d.xcscheme
+index 1e2713a..78be68c 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/box2d.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/box2d.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -47,7 +51,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/build all tests.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/build all tests.xcscheme
+index f62f0ff..80d070e 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/build all tests.xcscheme	
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/build all tests.xcscheme	
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -47,7 +51,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocos2d-documentation.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocos2d-documentation.xcscheme
+index 867e1b6..9fede0b 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocos2d-documentation.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocos2d-documentation.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -47,7 +51,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocos2d.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocos2d.xcscheme
+index e4b913b..92be516 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocos2d.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocos2d.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -47,7 +51,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocosLive.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocosLive.xcscheme
+index e221747..3113c1b 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocosLive.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocosLive.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -47,7 +51,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocosLiveTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocosLiveTest.xcscheme
+index e4a77c8..8f8498d 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocosLiveTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocosLiveTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocosnodeTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocosnodeTest.xcscheme
+index 24c0441..5d02e52 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocosnodeTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/cocosnodeTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/drawPrimitivesTest.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/drawPrimitivesTest.xcscheme
+index e9698d3..f30c642 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/drawPrimitivesTest.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/drawPrimitivesTest.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -56,7 +60,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/libpng.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/libpng.xcscheme
+index 198a24c..56170f9 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/libpng.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/libpng.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -47,7 +51,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/vorbis.xcscheme b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/vorbis.xcscheme
+index 4af30fd..9dc7f13 100644
+--- a/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/vorbis.xcscheme
++++ b/cocos2d-ios.xcodeproj/xcshareddata/xcschemes/vorbis.xcscheme
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
++   LastUpgradeVersion = "0450"
+    version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+@@ -30,14 +31,17 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       displayScaleIsEnabled = "NO"
+       displayScale = "1.00"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -47,7 +51,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-mac.xcodeproj/project.pbxproj b/cocos2d-mac.xcodeproj/project.pbxproj
+index 6f190ce..484f05f 100644
+Binary files a/cocos2d-mac.xcodeproj/project.pbxproj and b/cocos2d-mac.xcodeproj/project.pbxproj differ
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ActionEaseTest.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ActionEaseTest.xcscheme
+index 58d7dd4..4ec23ef 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ActionEaseTest.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ActionEaseTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ActionTest.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ActionTest.xcscheme
+index 25f9887..f6cd2ee 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ActionTest.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ActionTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/Box2D.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/Box2D.xcscheme
+index e4538de..d8fb21d 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/Box2D.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/Box2D.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -43,7 +47,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/Chipmunk.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/Chipmunk.xcscheme
+index 57d02a1..ab7c3ad 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/Chipmunk.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/Chipmunk.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -43,7 +47,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/CocosDenshion.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/CocosDenshion.xcscheme
+index e2d304f..847b19b 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/CocosDenshion.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/CocosDenshion.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -43,7 +47,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/DrawingPrimitivesTest.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/DrawingPrimitivesTest.xcscheme
+index 7bf1f02..eb25895 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/DrawingPrimitivesTest.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/DrawingPrimitivesTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/EffectsAdvancedTest.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/EffectsAdvancedTest.xcscheme
+index 1ed5e5d..8122176 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/EffectsAdvancedTest.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/EffectsAdvancedTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/EventsTest.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/EventsTest.xcscheme
+index dacbab6..f59d4f4 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/EventsTest.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/EventsTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/FullScreenTest.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/FullScreenTest.xcscheme
+index 42a3cc3..556cb7c 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/FullScreenTest.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/FullScreenTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/LabelTest.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/LabelTest.xcscheme
+index d5de9d0..3078cc4 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/LabelTest.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/LabelTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/MenuTest.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/MenuTest.xcscheme
+index 851c7d7..4256788 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/MenuTest.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/MenuTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ParallaxTest.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ParallaxTest.xcscheme
+index cd0423d..c3a2fca 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ParallaxTest.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ParallaxTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ParticleTest.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ParticleTest.xcscheme
+index 3b314c7..67b310c 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ParticleTest.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/ParticleTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/RenderTextureTest.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/RenderTextureTest.xcscheme
+index 1f7c0f4..c14ebe9 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/RenderTextureTest.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/RenderTextureTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/SpriteTest.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/SpriteTest.xcscheme
+index 9483da8..9049352 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/SpriteTest.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/SpriteTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/TextureTest.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/TextureTest.xcscheme
+index 3a151eb..e100af6 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/TextureTest.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/TextureTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/TiledMapTest.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/TiledMapTest.xcscheme
+index b052877..e127d84 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/TiledMapTest.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/TiledMapTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/TransitionTest.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/TransitionTest.xcscheme
+index a908a6f..606124d 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/TransitionTest.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/TransitionTest.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+@@ -52,7 +56,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+       <BuildableProductRunnable>
+          <BuildableReference
+             BuildableIdentifier = "primary"
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/build all tests.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/build all tests.xcscheme
+index 68f2a5b..87fbf00 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/build all tests.xcscheme	
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/build all tests.xcscheme	
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -43,7 +47,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/cocos2d.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/cocos2d.xcscheme
+index e6eb423..5a546d0 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/cocos2d.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/cocos2d.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -43,7 +47,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/libpng.xcscheme b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/libpng.xcscheme
+index e5e8fd7..10d5b79 100644
+--- a/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/libpng.xcscheme
++++ b/cocos2d-mac.xcodeproj/xcshareddata/xcschemes/libpng.xcscheme
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Scheme
+-   version = "1.3">
++   LastUpgradeVersion = "0450"
++   version = "1.8">
+    <BuildAction
+       parallelizeBuildables = "YES"
+       buildImplicitDependencies = "YES">
+@@ -30,12 +31,15 @@
+       </Testables>
+    </TestAction>
+    <LaunchAction
+-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+       launchStyle = "0"
+       useCustomWorkingDirectory = "NO"
+       buildConfiguration = "Debug"
+-      enablesOpenGLESFrameCapture = "YES">
++      enablesOpenGLESFrameCapture = "YES"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      allowLocationSimulation = "YES">
+       <AdditionalOptions>
+       </AdditionalOptions>
+    </LaunchAction>
+@@ -43,7 +47,8 @@
+       shouldUseLaunchSchemeArgsEnv = "YES"
+       savedToolIdentifier = ""
+       useCustomWorkingDirectory = "NO"
+-      buildConfiguration = "Release">
++      buildConfiguration = "Release"
++      debugDocumentVersioning = "YES">
+    </ProfileAction>
+    <AnalyzeAction
+       buildConfiguration = "Debug">
+diff --git a/cocos2d/CCAction.m b/cocos2d/CCAction.m
+index 1649cfb..f92c1d8 100644
+--- a/cocos2d/CCAction.m
++++ b/cocos2d/CCAction.m
+@@ -64,7 +64,7 @@
+ 
+ -(NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | Tag = %i>", [self class], self, tag_];
++	return [NSString stringWithFormat:@"<%@ = %08X | Tag = %li>", [self class], (int)self, (long)tag_];
+ }
+ 
+ -(id) copyWithZone: (NSZone*) zone
+diff --git a/cocos2d/CCActionInstant.m b/cocos2d/CCActionInstant.m
+index e7f6fad..32a62f7 100644
+--- a/cocos2d/CCActionInstant.m
++++ b/cocos2d/CCActionInstant.m
+@@ -255,10 +255,10 @@
+ 
+ -(NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | Tag = %i | target = %@ | selector = %@>",
++	return [NSString stringWithFormat:@"<%@ = %08X | Tag = %li | target = %@ | selector = %@>",
+ 			[self class],
+-			self,
+-			tag_,
++			(int)self,
++			(long)tag_,
+ 			[targetCallback_ class],
+ 			NSStringFromSelector(selector_)
+ 			];
+diff --git a/cocos2d/CCAnimation.m b/cocos2d/CCAnimation.m
+index b628ed9..626c9dc 100644
+--- a/cocos2d/CCAnimation.m
++++ b/cocos2d/CCAnimation.m
+@@ -64,7 +64,7 @@
+ 
+ -(NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | SpriteFrame = %08X, delayUnits = %0.2f >", [self class], self, spriteFrame_, delayUnits_ ];
++	return [NSString stringWithFormat:@"<%@ = %08X | SpriteFrame = %08X, delayUnits = %0.2f >", [self class], (int)self, (int)spriteFrame_, delayUnits_ ];
+ }
+ @end
+ 
+@@ -140,8 +140,8 @@
+ 
+ - (NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | frames=%d, totalDelayUnits=%d, delayPerUnit=%f>", [self class], self,
+-			[frames_ count],
++	return [NSString stringWithFormat:@"<%@ = %08X | frames=%ld, totalDelayUnits=%f, delayPerUnit=%f>", [self class], (int)self,
++			(long)[frames_ count],
+ 			totalDelayUnits_,
+ 			delayPerUnit_
+ 			];
+diff --git a/cocos2d/CCAnimationCache.m b/cocos2d/CCAnimationCache.m
+index ab698c8..f70e1b5 100644
+--- a/cocos2d/CCAnimationCache.m
++++ b/cocos2d/CCAnimationCache.m
+@@ -72,7 +72,7 @@ static CCAnimationCache *sharedAnimationCache_=nil;
+ 
+ - (NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | num of animations =  %i>", [self class], self, [animations_ count]];
++	return [NSString stringWithFormat:@"<%@ = %08X | num of animations =  %li>", [self class], (int)self, (long)[animations_ count]];
+ }
+ 
+ -(void) dealloc
+diff --git a/cocos2d/CCCamera.m b/cocos2d/CCCamera.m
+index 1ef6655..d794d73 100644
+--- a/cocos2d/CCCamera.m
++++ b/cocos2d/CCCamera.m
+@@ -43,7 +43,7 @@
+ 
+ - (NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | center = (%.2f,%.2f,%.2f)>", [self class], self, centerX_, centerY_, centerZ_];
++	return [NSString stringWithFormat:@"<%@ = %08X | center = (%.2f,%.2f,%.2f)>", [self class], (int)self, centerX_, centerY_, centerZ_];
+ }
+ 
+ 
+diff --git a/cocos2d/CCGrid.m b/cocos2d/CCGrid.m
+index c2ed19d..66e3164 100644
+--- a/cocos2d/CCGrid.m
++++ b/cocos2d/CCGrid.m
+@@ -125,7 +125,7 @@
+ }
+ - (NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | Dimensions = %ix%i>", [self class], self, gridSize_.x, gridSize_.y];
++	return [NSString stringWithFormat:@"<%@ = %08X | Dimensions = %lix%li>", [self class], (int)self, (long)gridSize_.x, (long)gridSize_.y];
+ }
+ 
+ - (void) dealloc
+diff --git a/cocos2d/CCLabelBMFont.m b/cocos2d/CCLabelBMFont.m
+index 147fc32..f45ccbe 100644
+--- a/cocos2d/CCLabelBMFont.m
++++ b/cocos2d/CCLabelBMFont.m
+@@ -127,7 +127,7 @@ typedef struct _KerningHashElement
+ 
+ - (NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | Kernings:%d | Image = %@>", [self class], self,
++	return [NSString stringWithFormat:@"<%@ = %08X | Kernings:%d | Image = %@>", [self class], (int)self,
+ 			HASH_COUNT(kerningDictionary_),
+ 			atlasName_];
+ }
+diff --git a/cocos2d/CCLabelTTF.m b/cocos2d/CCLabelTTF.m
+index e20124b..2fde80e 100644
+--- a/cocos2d/CCLabelTTF.m
++++ b/cocos2d/CCLabelTTF.m
+@@ -153,6 +153,6 @@
+ {
+ 	// XXX: string_, fontName_ can't be displayed here, since they might be already released
+ 
+-	return [NSString stringWithFormat:@"<%@ = %08X | FontSize = %.1f>", [self class], self, fontSize_];
++	return [NSString stringWithFormat:@"<%@ = %08X | FontSize = %.1f>", [self class], (int)self, fontSize_];
+ }
+ @end
+diff --git a/cocos2d/CCNode.m b/cocos2d/CCNode.m
+index 3daf0bf..f9ee3ae 100644
+--- a/cocos2d/CCNode.m
++++ b/cocos2d/CCNode.m
+@@ -324,7 +324,7 @@ static NSUInteger globalOrderOfArrival = 0;
+ 
+ - (NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | Tag = %i>", [self class], self, tag_];
++	return [NSString stringWithFormat:@"<%@ = %08X | Tag = %li>", [self class], (int)self, (long)tag_];
+ }
+ 
+ - (void) dealloc
+diff --git a/cocos2d/CCParticleBatchNode.m b/cocos2d/CCParticleBatchNode.m
+index e85dc94..560823f 100644
+--- a/cocos2d/CCParticleBatchNode.m
++++ b/cocos2d/CCParticleBatchNode.m
+@@ -170,7 +170,7 @@
+ 
+ -(NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | Tag = %i>", [self class], self, tag_ ];
++	return [NSString stringWithFormat:@"<%@ = %08X | Tag = %li>", [self class], (int)self, (long)tag_ ];
+ }
+ 
+ -(void)dealloc
+diff --git a/cocos2d/CCRibbon.m b/cocos2d/CCRibbon.m
+index e976c2c..03e3718 100644
+--- a/cocos2d/CCRibbon.m
++++ b/cocos2d/CCRibbon.m
+@@ -311,7 +311,7 @@
+ 
+ - (NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | end = %i, begin = %i>", [self class], self, end, begin];
++	return [NSString stringWithFormat:@"<%@ = %08X | end = %li, begin = %li>", [self class], (int)self, (long)end, (long)begin];
+ }
+ 
+ - (void) dealloc
+diff --git a/cocos2d/CCScheduler.m b/cocos2d/CCScheduler.m
+index 3e8ee60..f639ee3 100644
+--- a/cocos2d/CCScheduler.m
++++ b/cocos2d/CCScheduler.m
+@@ -128,7 +128,7 @@ typedef struct _hashSelectorEntry
+ 
+ - (NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | target:%@ selector:(%@)>", [self class], self, [target class], NSStringFromSelector(selector)];
++	return [NSString stringWithFormat:@"<%@ = %08X | target:%@ selector:(%@)>", [self class], (int)self, [target class], NSStringFromSelector(selector)];
+ }
+ 
+ -(void) dealloc
+diff --git a/cocos2d/CCSprite.m b/cocos2d/CCSprite.m
+index eca36d9..b2919f9 100644
+--- a/cocos2d/CCSprite.m
++++ b/cocos2d/CCSprite.m
+@@ -281,10 +281,10 @@ static SEL selSortMethod = NULL;
+ 
+ - (NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | Rect = (%.2f,%.2f,%.2f,%.2f) | tag = %i | atlasIndex = %i>", [self class], self,
++	return [NSString stringWithFormat:@"<%@ = %08X | Rect = (%.2f,%.2f,%.2f,%.2f) | tag = %li | atlasIndex = %li>", [self class], (int)self,
+ 			rect_.origin.x, rect_.origin.y, rect_.size.width, rect_.size.height,
+-			tag_,
+-			atlasIndex_
++			(long)tag_,
++			(long)atlasIndex_
+ 	];
+ }
+ 
+diff --git a/cocos2d/CCSpriteBatchNode.m b/cocos2d/CCSpriteBatchNode.m
+index ebce133..2fc2a5f 100644
+--- a/cocos2d/CCSpriteBatchNode.m
++++ b/cocos2d/CCSpriteBatchNode.m
+@@ -126,7 +126,7 @@ static SEL selSortMethod =NULL;
+ 
+ - (NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | Tag = %i>", [self class], self, tag_ ];
++	return [NSString stringWithFormat:@"<%@ = %08X | Tag = %li>", [self class], (int)self, (long)tag_ ];
+ }
+ 
+ -(void)dealloc
+diff --git a/cocos2d/CCSpriteFrame.m b/cocos2d/CCSpriteFrame.m
+index b3533ca..5dde578 100644
+--- a/cocos2d/CCSpriteFrame.m
++++ b/cocos2d/CCSpriteFrame.m
+@@ -64,7 +64,7 @@
+ 
+ - (NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | TextureName=%d, Rect = (%.2f,%.2f,%.2f,%.2f)> rotated:%d, offset = (%.2f,%.2f), originalSize w %.2f h %.2f)", [self class], self,
++	return [NSString stringWithFormat:@"<%@ = %08X | TextureName=%d, Rect = (%.2f,%.2f,%.2f,%.2f)> rotated:%d, offset = (%.2f,%.2f), originalSize w %.2f h %.2f)", [self class], (int)self,
+ 			texture_.name,
+ 			rect_.origin.x,
+ 			rect_.origin.y,
+diff --git a/cocos2d/CCSpriteFrameCache.m b/cocos2d/CCSpriteFrameCache.m
+index e46204a..8853b2e 100644
+--- a/cocos2d/CCSpriteFrameCache.m
++++ b/cocos2d/CCSpriteFrameCache.m
+@@ -80,7 +80,7 @@ static CCSpriteFrameCache *sharedSpriteFrameCache_=nil;
+ 
+ - (NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | num of sprite frames =  %i>", [self class], self, [spriteFrames_ count]];
++	return [NSString stringWithFormat:@"<%@ = %08X | num of sprite frames =  %li>", [self class], (int)self, (long)[spriteFrames_ count]];
+ }
+ 
+ -(void) dealloc
+diff --git a/cocos2d/CCTMXXMLParser.m b/cocos2d/CCTMXXMLParser.m
+index 16b7330..c652252 100644
+--- a/cocos2d/CCTMXXMLParser.m
++++ b/cocos2d/CCTMXXMLParser.m
+@@ -229,7 +229,7 @@
+ 		else if( [orientationStr isEqualToString:@"hexagonal"])
+ 			orientation_ = CCTMXOrientationHex;
+ 		else
+-			CCLOG(@"cocos2d: TMXFomat: Unsupported orientation: %@", orientation_);
++			CCLOG(@"cocos2d: TMXFomat: Unsupported orientation: %d", orientation_);
+ 
+ 		mapSize_.width = [[attributeDict valueForKey:@"width"] intValue];
+ 		mapSize_.height = [[attributeDict valueForKey:@"height"] intValue];
+diff --git a/cocos2d/CCTexture2D.m b/cocos2d/CCTexture2D.m
+index 9f16de4..979b221 100644
+--- a/cocos2d/CCTexture2D.m
++++ b/cocos2d/CCTexture2D.m
+@@ -194,7 +194,8 @@ static CCTexture2DPixelFormat defaultAlphaPixelFormat_ = kCCTexture2DPixelFormat
+ 
+ - (NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | Name = %i | Dimensions = %ix%i | Coordinates = (%.2f, %.2f)>", [self class], self, name_, width_, height_, maxS_, maxT_];
++	return [NSString stringWithFormat:@"<%@ = %08X | Name = %i | Dimensions = %lix%li | Coordinates = (%.2f, %.2f)>", [self class], (int)self, name_,
++            (long)width_, (long)height_, maxS_, maxT_];
+ }
+ 
+ -(CGSize) contentSize
+diff --git a/cocos2d/CCTextureAtlas.m b/cocos2d/CCTextureAtlas.m
+index d72e2bd..62efa5f 100644
+--- a/cocos2d/CCTextureAtlas.m
++++ b/cocos2d/CCTextureAtlas.m
+@@ -112,7 +112,7 @@
+ 
+ -(NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | totalQuads =  %i>", [self class], self, totalQuads_];
++	return [NSString stringWithFormat:@"<%@ = %08X | totalQuads =  %li>", [self class], (int)self, (long)totalQuads_];
+ }
+ 
+ -(void) dealloc
+diff --git a/cocos2d/CCTextureCache.m b/cocos2d/CCTextureCache.m
+index c752027..b0db051 100644
+--- a/cocos2d/CCTextureCache.m
++++ b/cocos2d/CCTextureCache.m
+@@ -111,10 +111,10 @@ static CCTextureCache *sharedTextureCache;
+ 
+ - (NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | num of textures =  %i | keys: %@>",
++	return [NSString stringWithFormat:@"<%@ = %08X | num of textures =  %li | keys: %@>",
+ 			[self class],
+-			self,
+-			[textures_ count],
++			(int)self,
++			(long)[textures_ count],
+ 			[textures_ allKeys]
+ 			];
+ 			
+diff --git a/cocos2d/CCTileMapAtlas.m b/cocos2d/CCTileMapAtlas.m
+index aef6fe0..cf66bd5 100644
+--- a/cocos2d/CCTileMapAtlas.m
++++ b/cocos2d/CCTileMapAtlas.m
+@@ -138,7 +138,7 @@
+ 		
+ 		// XXX: this method consumes a lot of memory
+ 		// XXX: a tree of something like that shall be impolemented
+-		NSNumber *num = [posToAtlasIndex objectForKey: [NSString stringWithFormat:@"%d,%d", pos.x, pos.y]];
++		NSNumber *num = [posToAtlasIndex objectForKey: [NSString stringWithFormat:@"%ld,%ld", (long)pos.x, (long)pos.y]];
+ 		[self updateAtlasValueAt:pos withValue:tile withIndex: [num integerValue]];
+ 	}	
+ }
+diff --git a/cocos2d/Platforms/iOS/ES1Renderer.m b/cocos2d/Platforms/iOS/ES1Renderer.m
+index b56b75e..205603d 100644
+--- a/cocos2d/Platforms/iOS/ES1Renderer.m
++++ b/cocos2d/Platforms/iOS/ES1Renderer.m
+@@ -215,7 +215,7 @@
+ 
+ - (NSString*) description
+ {
+-	return [NSString stringWithFormat:@"<%@ = %08X | size = %ix%i>", [self class], self, backingWidth_, backingHeight_];
++	return [NSString stringWithFormat:@"<%@ = %08X | size = %ix%i>", [self class], (int)self, backingWidth_, backingHeight_];
+ }
+ 
+ 
+diff --git a/cocos2d/Support/CCArray.m b/cocos2d/Support/CCArray.m
+index 7ebe2c4..e3d3b10 100644
+--- a/cocos2d/Support/CCArray.m
++++ b/cocos2d/Support/CCArray.m
+@@ -106,7 +106,7 @@
+ 
+ - (id) objectAtIndex:(NSUInteger)index
+ {
+-	NSAssert2( index < data->num, @"index out of range in objectAtIndex(%d), index %i", data->num, index );
++	NSAssert2( index < data->num, @"index out of range in objectAtIndex(%ld), index %li", (long)data->num, (long)index );
+ 	
+ 	return data->arr[index];
+ }
+@@ -417,7 +417,7 @@ static inline NSInteger selectorCompare(id object1,id object2,void *userData){
+ 
+ - (NSString*) description
+ {
+-	NSMutableString *ret = [NSMutableString stringWithFormat:@"<%@ = %08X> = ( ", [self class], self];
++	NSMutableString *ret = [NSMutableString stringWithFormat:@"<%@ = %08X> = ( ", [self class], (int)self];
+ 
+ 	for( id obj in self)
+ 		[ret appendFormat:@"%@, ",obj];
+diff --git a/external/Chipmunk/include/chipmunk/constraints/cpConstraint.h b/external/Chipmunk/include/chipmunk/constraints/cpConstraint.h
+index fe11e65..06756fa 100644
+--- a/external/Chipmunk/include/chipmunk/constraints/cpConstraint.h
++++ b/external/Chipmunk/include/chipmunk/constraints/cpConstraint.h
+@@ -19,7 +19,7 @@
+  * SOFTWARE.
+  */
+ 
+-// TODO: Comment me!
++// Comment me!
+ 	
+ extern cpFloat cp_constraint_bias_coef;
+ 
+diff --git a/external/FontLabel/FontLabel.m b/external/FontLabel/FontLabel.m
+index 58975b1..a2a6ed0 100644
+--- a/external/FontLabel/FontLabel.m
++++ b/external/FontLabel/FontLabel.m
+@@ -127,6 +127,8 @@
+ 				case UITextAlignmentRight:
+ 					point.x += origSize.width - size.width;
+ 					break;
++                default:
++                    break;
+ 			}
+ 			[self.text drawAtPoint:point forWidth:size.width withZFont:actualFont lineBreakMode:self.lineBreakMode];
+ 		} else {
+diff --git a/external/FontLabel/FontLabelStringDrawing.m b/external/FontLabel/FontLabelStringDrawing.m
+index 2907372..3b1549f 100644
+--- a/external/FontLabel/FontLabelStringDrawing.m
++++ b/external/FontLabel/FontLabelStringDrawing.m
+@@ -582,7 +582,7 @@ static CGSize drawOrSizeTextConstrainedToSize(BOOL performDraw, NSString *string
+ 				}
+ 			}
+ 			if (finishLine) {
+-				// TODO: support head/middle truncation
++				// support head/middle truncation
+ 				if (lastLine && idx < len && lineBreakMode == UILineBreakModeTailTruncation) {
+ 					// truncate
+ 					unichar ellipsis = 0x2026; // ellipsis (…)
+@@ -646,6 +646,8 @@ static CGSize drawOrSizeTextConstrainedToSize(BOOL performDraw, NSString *string
+ 						case UITextAlignmentRight:
+ 							drawPoint.x = constrainedSize.width - lineSize.width;
+ 							break;
++                        default:
++                            break;
+ 					}
+ 					NSUInteger stopGlyphIdx = glyphIdx;
+ 					NSUInteger lastRunIdx = currentRunIdx;
+diff --git a/external/TouchJSON/Extensions/CDataScanner_Extensions.m b/external/TouchJSON/Extensions/CDataScanner_Extensions.m
+index 90dbbda..c9de19c 100644
+--- a/external/TouchJSON/Extensions/CDataScanner_Extensions.m
++++ b/external/TouchJSON/Extensions/CDataScanner_Extensions.m
+@@ -90,7 +90,7 @@ else
+     NSUInteger theLine = 0;
+     for (const u_int8_t *C = start; C < current; ++C)
+         {
+-        // TODO: JIW What about MS-DOS line endings you bastard! (Also other unicode line endings)
++        // JIW What about MS-DOS line endings you bastard! (Also other unicode line endings)
+         if (*C == '\n' || *C == '\r')
+             {
+             ++theLine;
